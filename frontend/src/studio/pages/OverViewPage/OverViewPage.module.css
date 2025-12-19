@@ -1,0 +1,55 @@
+.graphArea {
+    padding: 2% 4%;
+}
+
+.graphArea .tab {
+    display: flex;
+    align-items: center;
+    gap: 2%;
+}
+
+.tab button {
+    position: relative;
+    color: rgb(157, 157, 157);
+    cursor: pointer;
+    padding: 6px 0px;
+    transition: all .6s;
+
+}
+
+.tab button.active {
+    color: black;
+
+}
+
+
+.tab button::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0%;
+    background-color: #8884d8; /* 下線の色 */
+    transition: all .6s ease;
+
+}
+
+.tab button:hover::after {
+    width: 100%;
+}
+
+.tab button.active::after {
+  width: 100%;
+}
+
+
+
+.graphWrapper {
+    height: 60vh;
+    width: 100%;
+    margin-top: 40px;
+}
+
+
+

@@ -1,0 +1,68 @@
+.editCommentArea {
+    /* display: flex; */
+    flex: 1 1 100%;
+}
+
+
+textarea {
+    width: 100%;
+    line-height: 1.8;
+    /* overflow: hidden;   ← スクロールバー非表示 */
+    padding-bottom: 0;
+    font-size: 16px;
+    border: none;
+    outline: none;          /* フォーカス時の青枠を消す */
+    border-bottom: 1px solid #333;
+    resize: none;           /* サイズ変更禁止 */
+}
+
+
+textarea:focus {
+    border-bottom: 2px solid #222;
+}
+
+
+
+
+
+
+
+/* ----.editButtons---- */
+
+.editButtons {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+
+
+.editButtons button {
+    cursor: pointer;
+    min-width: 100px;
+    padding: 8px 10px;
+    /* background: pink; */
+    text-align: center;
+    border-radius: 20px;
+    transition: all .6s;
+}
+
+
+
+.editButtons button:hover {
+    opacity: .8;
+}
+
+
+
+
+.editButtons .save {
+    background: #a9eae0;
+
+}
+
+
+.editButtons .cancel {
+    background: #f2f2f2;
+}

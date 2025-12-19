@@ -1,0 +1,33 @@
+.container {
+    display: flex;
+
+}
+
+
+/* ----.container > .mainArea */
+.container > .mainArea {
+    /* background: pink; */
+    flex: 1 1 100%;
+    padding-top: 20px;
+    padding-right: 24px;
+}
+
+.container > .mainArea > .profileArea {
+    display: flex;
+    align-items: center;
+}
+
+
+.mainArea > .profileArea > img {
+    max-width: 130px;
+    height: auto;
+    border-radius: 100%;
+    /* border: 1px solid blue; */
+}
+
+.mainArea > .profileArea > .username {
+    font-size: 24px;
+}
+
+
+

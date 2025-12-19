@@ -1,0 +1,99 @@
+.tabMenu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.tabMenu button {
+    padding: 4px 12px;
+    background: rgb(231, 231, 231);
+    border-radius: 12px;
+    transition: all .6s;
+
+}
+
+.tabMenu button:hover {
+    opacity: .8;
+}
+
+
+.tabMenu .active {
+    color: #fff;
+    background: #000;
+
+}
+
+
+
+/* ----.videoCards---- */
+.videoCards {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+
+}
+
+
+/* ----.videoCard---- */
+.videoCard {
+    max-width: calc(25% - 16px);
+    flex: 1 1 calc(25% -16px);
+    position: relative;
+}
+
+
+
+/* ----.videoItem---- */
+.videoItem {
+    color: #000;
+}
+
+.videoItem > .thum > img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+
+
+/* ----.bottom > .videoTitle */
+
+.bottom > .videoTitle {
+    font-size: 14px;
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    /* -webkit-line-clamp: 2;  最大2行 Chrome系ブラウザではOK。警告は無視してOK */
+    -webkit-box-orient: vertical;
+    line-height: 1.4;
+    max-height: calc(1.4em * 2);   /* 行高 × 行数 */
+    margin-top: 6px;
+
+}
+
+
+
+/* ----.bottom > .sub---- */
+.bottom .sub {
+    display: flex;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.bottom .sub p {
+    font-size: 13px;
+    color: rgb(133, 133, 133);
+}
+
+
+.menuButton {
+    position: absolute;
+    bottom: 16px;
+    right: 0;
+}

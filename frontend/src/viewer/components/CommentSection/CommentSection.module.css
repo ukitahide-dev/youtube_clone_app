@@ -1,0 +1,109 @@
+/* ----.commentArea---- */
+
+.commentArea {
+    margin-top: 20px;
+}
+
+.commentArea button {
+    all: unset;
+}
+
+
+
+/* ----.commentList---- */
+
+.commentList {
+    margin-top: 20px;
+}
+
+
+/* ----.comment---- */
+
+.commentList .comment {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+}
+
+
+
+/* ----.comment > .right---- */
+.comment > .right {
+    position: relative;
+    background-color: rgb(194, 249, 249);
+}
+
+
+.comment > .right .toggleModal {
+    color: #666;
+    cursor: pointer;
+}
+
+
+/* ----.comment > .left---- */
+
+.comment .left {
+    background-color: teal;
+}
+
+
+
+
+.commentArea .commentList .comment textarea {
+    width: 100%;
+    line-height: 1.8;
+    /* overflow: hidden;   ← スクロールバー非表示 */
+    padding-bottom: 0;
+    font-size: 16px;
+    border: none;
+    outline: none;          /* フォーカス時の青枠を消す */
+    border-bottom: 1px solid #333;
+    resize: none;           /* サイズ変更禁止 */
+}
+
+
+.commentArea .commentList .comment textarea:focus {
+    border-bottom: 2px solid #222;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.commentArea .commentList .buttons {
+    margin-top: 8px;
+    display: flex;
+    gap: 16px;
+}
+
+.commentArea .commentList .commentLike,
+.commentArea .commentList .commentDislike {
+    color: #555;
+    cursor: pointer;
+    background: #fff;
+    border-radius: 50%;
+    padding: 4px;
+    transition: all .6s;
+
+}
+
+
+
+.commentArea .commentList .commentLike:hover ,
+.commentArea .commentList .commentDislike:hover {
+    opacity: .6;
+    background: #f6cfcf;
+}
+
+
+.commentArea .commentList .commentLike:hover {
+    background: #97e6da;
+}

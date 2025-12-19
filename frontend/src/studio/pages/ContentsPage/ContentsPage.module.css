@@ -1,0 +1,63 @@
+.mainTitle {
+    font-size: 26px;
+    padding: 20px 24px;
+}
+
+
+
+.tabMenu {
+    border-bottom: 1px solid rgb(219, 219, 219);
+}
+
+
+.menus {
+    display: flex;
+    align-items: center;
+    gap: 2%;
+    padding: 0 24px 20px;
+
+
+}
+
+
+.menus a {
+    position: relative;
+    display: inline-block;
+    color: rgb(112, 112, 112);
+    text-decoration: none;
+    padding: 4px 0;
+    transition: all .6s ease;
+
+}
+
+.menus a.active {
+    color: black;
+}
+
+
+.menus a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #8884d8;
+    width: 0;
+    height: 2px;
+    transition: all .6s ease-in-out;
+
+}
+
+
+.menus a:hover::after {
+    width: 100%;
+}
+
+
+.menus a.active::after {
+    width: 100%;
+}
+
+
+/* .menus a:hover {
+    border-bottom: 5px solid black;
+} */

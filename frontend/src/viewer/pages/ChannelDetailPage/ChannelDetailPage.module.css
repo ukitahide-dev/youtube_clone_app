@@ -1,0 +1,73 @@
+.container {
+    display: flex;
+}
+
+.main {
+    flex: 3;
+    margin-top: 20px;
+    padding-right: 60px;
+}
+
+.coverImage {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+}
+
+.coverImage img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+
+.profile {
+    display: flex;
+    gap: 16px;
+    margin-top: 18px;
+}
+
+
+
+.profile img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+.profile .channelName {
+    font-size: 28px;
+}
+
+
+.profile .sub {
+    display: flex;
+    gap: 12px;
+
+}
+
+
+.profile .sub p {
+    font-size: 14px;
+    color: rgb(119, 115, 115);
+}
+
+
+
+
+
+.tagMenu {
+    display: flex;
+    gap: 0.8rem;
+    padding: 0.8rem ;
+    border-bottom: 1px solid rgb(199, 199, 199);
+}
+
+
+
+
+
+

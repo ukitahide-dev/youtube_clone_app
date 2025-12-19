@@ -1,0 +1,96 @@
+/* ----.container---- */
+.container {
+    /* padding-top: 80px; */
+    padding-bottom: 100px;
+}
+
+/* ----.container > .top---- */
+.container > .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+.container > .top > .right {
+    display: flex;
+    gap: 10px;
+
+}
+
+
+
+.carouselWrapper {
+    /* position: relative; */
+    overflow: hidden;
+    width: 100%;
+    margin-top: 20px;
+    /* background: teal; */
+
+}
+
+.carousel {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+
+}
+
+
+/* ----.card---- */
+.card {
+    flex: 0 0 calc((100% - 48px) / 4);
+    border-radius: 10px;
+    /* overflow: hidden; */
+    position: relative;
+
+}
+
+
+.card img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 8px;
+
+}
+
+
+.card p {
+    padding: 8px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #fff;
+}
+
+
+.right .allView {
+    background: #eaeef9;
+    color: #000000;
+    padding: 8px 14px;
+    min-width: 100px;
+    border-radius: 20px;
+    text-align: center;
+    transition: all .6s;
+}
+
+
+.right .allView:hover {
+    background: #000;
+    color: #fff;
+}
+
+
+
+.navLeft, .navRight {
+    cursor: pointer;
+    color: #ddd;
+    transition: all .6s;
+}
+
+.navLeft:hover, .navRight:hover {
+    color: black;
+}

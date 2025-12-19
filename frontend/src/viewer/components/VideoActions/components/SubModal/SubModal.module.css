@@ -1,0 +1,25 @@
+/* ----.modal */
+
+.modal {
+    position: absolute;
+    right: 0;
+    top: 110%;
+    background: #fff;
+    box-shadow: 10px 4px 10px rgba(0,0,0,.8);
+    border-radius: 10px;
+}
+
+
+
+.modal .menus li {
+    padding: 6px 10px;
+    transition: all .4s ease;
+    cursor: pointer;
+    /* border-radius: 12px; */
+
+}
+
+
+.modal .menus li:hover {
+    background: rgb(193, 210, 246);
+}

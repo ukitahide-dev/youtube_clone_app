@@ -1,0 +1,60 @@
+.videoCard {
+    max-width: calc(25% - 16px);
+    flex: 1 1 calc(25% - 16px);
+
+}
+
+
+
+.thumArea {
+    position: relative;
+}
+
+
+
+.thumArea .thum {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover; 
+    display: block;
+    border-radius: 8px;
+
+}
+
+
+
+.thumArea .videoNums {
+    position: absolute;
+    bottom: 6px;
+    right: 6px;
+    background: black;
+    min-width: 120px;
+    opacity: .7;
+    text-align: center;
+}
+
+
+.thumArea .videoNums span {
+    color: #fff;
+    padding: 4px;
+
+}
+
+
+.sub {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.sub button {
+    transition: all .6s;
+
+}
+
+.sub button:hover {
+    background: #e4e1ff;
+    /* border-radius: 50%; */
+}

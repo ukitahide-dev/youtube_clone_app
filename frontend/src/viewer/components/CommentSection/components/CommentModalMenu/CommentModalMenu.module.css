@@ -1,0 +1,19 @@
+
+.commentModal {
+    position: absolute;
+    bottom: -20px;
+    right: 0;
+    background: #fff;
+    min-width: 200px;
+    padding: 12px 0px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* 黒に近い影 */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+.commentModal button {
+    cursor: pointer;
+}

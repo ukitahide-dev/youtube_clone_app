@@ -1,0 +1,139 @@
+.mainArea {
+    flex: 1;
+}
+
+
+.mainArea .mainTitle {
+    font-size: 26px;
+    margin-top: 14px;
+}
+
+
+/* ----.videoCards---- */
+.videoCards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 34px;
+
+}
+
+
+/* ----.videoCards > .videoCard---- */
+.videoCards > .videoCard {
+    max-width: calc(25% - 10px);
+    flex: 1 1 calc(25% - 10px);
+    padding: 0.5rem;
+    position: relative;
+    /* display: flex; */
+    /* overflow: hidden; 擬似要素がはみ出さないように */
+    /* transition: transform 1.6s ease; 少しズームもさせたい場合 */
+}
+
+
+
+/* ----.videoItem > .thumArea---- */
+.videoItem > .thumArea > .thum {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;  /* 横16:縦9に固定  幅が決まったら高さも自動的に「16:9」の比率で決まります。（例：幅 320px なら高さは 180px になる）。よくある使い方 → YouTube のサムネイルや動画枠を「横長16:9」に揃える。*/
+    object-fit: cover;     /* はみ出した部分を切り取り */
+    display: block;
+    border-radius: 8px;
+}
+
+
+
+
+/* ----.videoItem > .sub---- */
+.videoItem > .sub {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+
+}
+
+
+.videoItem > .sub .profileIcon {
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+
+.videoItem > .sub > .right {
+    color: #000;
+    font-size: 14px;
+
+}
+
+
+
+.sub > .right > p {
+    color: rgb(124, 124, 124);
+}
+
+
+
+/* .videoCard::before {
+    content: '';
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(214, 227, 251, 0.8);
+    border-radius: 10px;
+    transform: translate(-50%, -50%);
+    transition: all 1.0s;
+    z-index: 0;
+
+} */
+
+
+/* .videoCard > * {
+    position: relative;
+    z-index: 1;
+} */
+
+
+/* .videoCard:hover::before {
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+} */
+
+
+
+.menuButton {
+    position: absolute;
+    /* z-index: 1000; */
+    /* top: 220px; */
+    bottom: 40px;
+    right: 10px;
+}
+
+
+
+
+/* タブレット用 */
+@media (max-width: 1024px) {
+    .videoCards > .videoCard {
+        flex: 1 1 calc(50% - 10px); /* タブレット: 2列 */
+        max-width: calc(50% - 10px);
+    }
+}
+
+
+
+/* スマホ用 */
+@media (max-width: 768px) {
+    .videoCards > .videoCard {
+        flex: 1 1 100%; /* スマホ: 1列 */
+        max-width: 100%;
+    }
+}

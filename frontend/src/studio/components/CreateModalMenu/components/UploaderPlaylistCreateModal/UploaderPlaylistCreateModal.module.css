@@ -1,0 +1,128 @@
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+
+.modal {
+    position: absolute;
+    top: 100px;
+    background: #fff;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 4px 20px rgba(0,0,0,.2);
+
+}
+
+
+.modal .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid rgb(186, 186, 186);
+}
+
+
+
+/* ----.content---- */
+.modal .content {
+    padding: 0 20px 20px;
+}
+
+.modal .content textarea {
+    width: 100%;
+    resize: none;
+    padding: 8px;
+    border-radius: 10px;
+}
+
+
+.modal .content label {
+    font-size: 13px;
+}
+
+.modal .content .counter {
+    text-align: right;
+    font-size: 13px;
+}
+
+
+.modal .titleArea, .modal .descArea {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 14px;
+}
+
+
+.content .titleArea .title {
+    height: 60px;
+}
+
+
+.content .descArea .desc {
+    height: 120px;
+}
+
+
+.modal .addVideoArea {
+    margin-top: 24px;
+
+}
+
+
+.modal .addVideoArea .addVideo {
+    padding: 8px 18px;
+    border-radius: 18px;
+    background: rgb(104, 124, 187);
+
+    color: #ffffff;
+    transition: all .6s;
+
+}
+
+
+
+/* ----bottom---- */
+
+.modal .bottom {
+    border-top: 1px solid rgb(186, 186, 186);
+    padding: 20px;
+
+}
+
+
+.bottom .create {
+    padding: 6px 14px;
+    border-radius: 18px;
+    background: teal;
+    color: #fff;
+
+    text-align: center;
+    transition: all .6s;
+
+}
+
+
+.bottom .create:disabled {
+    opacity: 0.5;         /* 半透明に */
+    cursor: not-allowed;  /* 禁止カーソル */
+    pointer-events: none; /* クリックを完全に無効化 */
+    background: rgb(164, 164, 164);
+}
+
+
+
+button:hover {
+    opacity: .8;
+}

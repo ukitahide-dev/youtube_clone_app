@@ -1,0 +1,79 @@
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+
+.modal {
+    background: #fff;
+    border-radius: 12px;
+    padding: 2%;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 4px 20px rgba(0,0,0,.2);
+
+}
+
+
+.modal .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.modal .thumArea {
+    margin-top: 14px;
+}
+
+.modal .thumArea .thumbnail {
+    max-width: 100%;
+    border-radius: 8px;
+    aspect-ratio: 16/9;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+
+.thumArea .thumbnail:hover {
+    opacity: 0.9;
+    transform: scale(1.02);
+}
+
+
+.titleArea {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 14px;
+}
+
+
+.titleArea input {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+
+.saveArea {
+    margin-top: 18px;
+}
+
+.saveArea button {
+    width: 100%;
+    padding: 2% 1%;
+    background-color: rgb(78, 216, 170);
+    color: #fff;
+    text-align: center;
+    border-radius: 16px;
+}

@@ -1,0 +1,60 @@
+/* ----.card---- */
+.card {
+    display: flex;
+    position: relative;
+    margin-top: 10px;
+}
+
+
+
+/* ----.videoItem---- */
+.videoItem {
+    display: flex;
+    gap: 10px;
+    /* background: teal; */
+    flex: 1;
+
+}
+
+
+/* ----.videoItem > .left---- */
+.videoItem > .left {
+    width: 150px;
+}
+
+
+
+.videoItem > .left > img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+
+/* ----.videoItem > .right---- */
+.videoItem > .right {
+    flex: 1;
+    /* background-color: cornflowerblue; */
+}
+
+.videoItem > .right .videoTitle {
+    font-size: 14px;
+    color: #000;
+    font-weight: 450;
+}
+
+.videoItem > .right span {
+    font-size: 12px;
+    color: rgb(120, 120, 120);
+}
+
+
+
+/* ----.menuButton---- */
+.menuButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+}

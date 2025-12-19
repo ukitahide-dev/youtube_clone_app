@@ -1,0 +1,48 @@
+/* ----.introVideoArea---- */
+.introVideoArea {
+    padding: 24px 0;
+    border-bottom: 1px solid rgb(210, 210, 210);
+    position: relative;
+    /* padding-right: 20px; */
+}
+
+
+
+
+.videoItem > .left > .thum > img {
+    width: 300px;
+    height: auto;
+    aspect-ratio: 16 / 9;   /* 横16:縦9に固定  幅が決まったら高さも自動的に「16:9」の比率で決まります。（例：幅 320px なら高さは 180px になる）。よくある使い方 → YouTube のサムネイルや動画枠を「横長16:9」に揃える。*/
+    object-fit: cover;     /* はみ出した部分を切り取り */
+    display: block;
+    border-radius: 8px;
+}
+
+
+/* ----.videoItem---- */
+.videoItem {
+    display: flex;
+    color: #000;
+    gap: 10px;
+
+}
+
+
+.videoItem > .right > span {
+    color: rgb(136, 136, 136);
+    font-size: 14px;
+}
+
+
+.menuButton {
+    position: absolute;
+    left: 430px;
+    top: 30px;
+}
+
+
+/* ----.videosArea---- */
+.videosArea {
+    padding: 24px 0;
+    max-width: 1302px;
+}

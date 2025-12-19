@@ -1,0 +1,119 @@
+.playlistMenu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 18px 24px;
+    border-bottom: 1px solid rgb(201, 201, 201);
+}
+
+.playlistMenu button {
+    position: relative;
+    padding: 4px 0;
+    color: rgb(112, 112, 112);
+
+}
+
+
+.playlistMenu button.active {
+    color: #000;
+
+}
+
+
+.playlistMenu button::after {
+    content: '';
+    position: absolute;
+    background: #8884d8;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    transition: all .6s ease-in-out;
+}
+
+
+.playlistMenu button:hover::after {
+    width: 100%;
+}
+
+.playlistMenu button.active::after {
+    width: 100%;
+}
+
+
+
+/* -----全体のヘッダー行と動画行を統一するために共通クラスを作る----- */
+.col {
+    display: grid;
+    grid-template-columns: 500px 150px 150px 150px;  /* 左から順に幅指定 */
+    align-items: center;
+    padding: 8px 24px;
+}
+
+/* -----head----- */
+.head {
+    border-bottom: 1px solid rgb(184, 184, 184);
+    font-size: 14px;
+    color: rgb(119, 119, 119);
+    font-weight: 600;
+}
+
+
+
+
+/* ----.plArea---- */
+.plArea {
+    position: relative;
+    border-bottom: 1px solid rgb(184, 184, 184);
+    padding: 6px 24px;
+}
+
+.plArea .left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+.plArea .left img {
+    width: 100px;
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 16/9;
+    border-radius: 12px;
+}
+
+
+.plArea .plTitle {
+    font-size: 14px;
+}
+
+.plArea .plDesc {
+    font-size: 13px;
+}
+
+
+
+.plArea:hover {
+    background-color: #f9f9f9;
+}
+
+
+
+/* 説明文はデフォルト表示、ホバーで非表示 */
+.plArea:hover .plDesc {
+    display: none;
+}
+
+
+/* .menusはデフォルト非表示、ホバーで表示 */
+.plArea .left .menus {
+    display: none;
+
+}
+
+
+.plArea:hover .menus {
+    display: flex;
+    gap: 4px;
+}

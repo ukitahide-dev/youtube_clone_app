@@ -1,0 +1,43 @@
+/* ----.channels---- */
+.channels {
+    display: flex;
+    gap: 8px;
+
+
+}
+
+
+
+/* ----.channelCard---- */
+.channelCard {
+    flex: 1 1 calc(16.66666% - 8px);
+    margin-top: 16px;
+}
+
+.channelCard > .thum {
+    position: relative;
+}
+
+.channelCard > .thum > .videoNums {
+    position: absolute;
+    color: #fff;
+    background: rgba(0,0,0,.8);
+    font-size: 12px;
+    right: 8px;
+    bottom: 10px;
+    padding: 2px 6px;
+}
+
+.channelCard > .thum > img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+
+.channelCard > .title {
+    font-size: 14px;
+    color: #000;
+}

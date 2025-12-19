@@ -1,0 +1,66 @@
+/* ----.modal---- */
+
+.modal {
+    position: absolute;
+    top: 100%;
+    right: 20px;
+    z-index: 2000;
+    background-color: #fff;
+    padding: 20px 0 0px;
+    border-radius: 10px;
+    max-width: 350px;
+    width: 80%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    /* animation: fadeIn 0.5s ease-in-out; */
+}
+
+
+
+/* ----.modal > .top */
+
+.modal > .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+
+.modal > .top > .xbutton {
+    all: unset;
+    cursor: pointer;
+
+}
+
+
+/* ----.modal > .playlistList---- */
+
+.modal > .playlistList {
+    margin-top: 20px;
+    padding: 0 20px;
+    height: 140px;
+    overflow-y: auto;
+}
+
+
+
+
+/* ----.modal > .createPlaylistArea---- */
+
+.modal > .createPlaylistArea {
+    border-top: 1px solid #d9d8d8;
+    margin-top: 20px;
+}
+
+
+.modal > .createPlaylistArea > button {
+    display: block;   /* margin autoで中央寄せにするために必要*/
+    width: 90%;
+    text-align: center;
+    padding: 6px 0;
+    border-radius: 16px;
+    margin: 20px auto;
+    color: #fff;
+    background-color: rgb(25, 156, 156);
+
+}

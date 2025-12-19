@@ -1,0 +1,57 @@
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6); /* ← 薄暗い背景 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+
+}
+
+.modal {
+    background-color: #fff;
+    padding: 18px;
+    border-radius: 10px;
+    max-width: 300px;
+    width: 90%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    /* animation: fadeIn 0.5s ease-in-out; */
+}
+
+
+
+.modal input {
+    margin-top: 20px;
+    padding: 10px;
+    width: 100%;
+}
+
+
+/* ----.buttons---- */
+.modal .buttons {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.buttons button {
+    border-radius: 12px;
+    padding: 4px 10px;
+    text-align: center;
+    width: 100px;
+    cursor: pointer;
+}
+
+.save {
+    background-color: rgb(100, 240, 240);
+}
+
+.cancel {
+    background-color: rgb(198, 193, 193);
+}

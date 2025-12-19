@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+
+}
+
+
+.studioContent {
+    /* background-color: rgb(127, 132, 132); */
+    flex: 6;
+}
+
+
+
+
+

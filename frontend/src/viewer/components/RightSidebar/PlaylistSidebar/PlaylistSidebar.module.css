@@ -1,0 +1,123 @@
+.container {
+    border: 1px solid #dfdfdf;
+    border-radius: 14px;
+    /* padding-right: 8px; */
+    /* background: rgb(189, 253, 253); */
+}
+
+
+
+
+.top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 18px 0;
+
+}
+
+
+.subTitle {
+    padding: 0px 18px;
+}
+
+
+.subTitle span {
+    font-size: 0.7rem;
+    color: #898989;
+
+}
+
+.subTitle .videoNums {
+    margin-left: 8px;
+}
+
+
+.title {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.toggleButton {
+  border: none;
+  background: transparent;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #666;
+  transition: transform 0.4s;
+}
+
+.toggleButton:hover {
+  transform: scale(1.2);
+}
+
+.shuffleButton {
+    color: #5b5b5b;
+    font-size: 20px;
+    padding: 6px 18px 10px;
+}
+
+
+.videoList {
+    max-height: 90vh;
+    overflow-y: auto;    /* はみ出したときだけスクロールバーを出す */
+    transition: all 0.6s ease;
+}
+
+
+
+/* ----.videoItem---- */
+
+.videoItem {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 6px;
+    border-radius: 8px;
+    transition: background 0.4s;
+    cursor: pointer;
+}
+
+
+.videoItem:hover {
+    background-color: #dfe5fd;
+}
+
+
+.active {
+    background-color: #d8f4ee;  /* 薄いティール系 (Tailwindの teal-100 に近い) */
+    border: 2px solid #14b8a6;  /* 濃いティール (Tailwindの teal-500) */
+}
+
+
+
+/* ----.videoItem > .left---- */
+.videoItem > .left {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+
+
+.videoItem > .left > .thumbnail {
+    width: 120px;
+    height: 70px;
+    border-radius: 8px;
+    margin-right: 8px;
+    object-fit: cover;
+}
+
+.videoItem > .left .videoTitle {
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #1f1e1e;
+    margin-bottom: 4px;
+}
+
+.videoItem > .left .uploaderName {
+    font-size: 0.8rem;
+    color: #706d6d;
+}

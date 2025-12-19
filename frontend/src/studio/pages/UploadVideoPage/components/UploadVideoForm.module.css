@@ -1,0 +1,19 @@
+/* ----.form---- */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+
+
+/* ----.submitBtn---- */
+.submitBtn {
+    background: #ff0000;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+}

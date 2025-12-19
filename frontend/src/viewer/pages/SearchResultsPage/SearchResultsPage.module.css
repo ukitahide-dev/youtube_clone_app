@@ -1,0 +1,99 @@
+/* ========== サムネイルが横並びで崩れない安定レイアウト ========== */
+
+
+/* ----.container---- */
+.container {
+    display: flex;
+}
+
+/*----.cardList---- */
+.cardList {
+    flex: 1;
+    padding: 20px;
+    padding-right: 200px;
+    /* background-color: paleturquoise; */
+}
+
+
+/* ----.card---- */
+.card {
+    position: relative;
+    margin-top: 14px;
+    display: flex;
+}
+
+
+/* ----.videoItem----*/
+.videoItem {
+    display: flex;
+    gap: 14px;
+    flex: 1;
+}
+
+
+/* ----.videoItem > .left---- */
+.videoItem > .left {
+    width: 360px;         /* ← 固定幅が絶対安定！（YouTubeと同じ） */
+    flex-shrink: 0;
+}
+
+.videoItem > .left > img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+
+/* ----.videoItem > .right----*/
+.videoItem > .right {
+    /* background-color: teal; */
+    flex: 1;
+}
+
+.videoItem > .right > .top > .videoTitle {
+    color: #000;
+    font-weight: 430;
+}
+
+.videoItem > .right > .top > span {
+    font-size: 12px;
+    color: rgb(163, 163, 163);
+
+}
+
+
+.videoItem > .right > .user {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 10px;
+}
+
+.videoItem > .right > .user > img {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    object-fit: cover;
+
+}
+
+.videoItem > .right > .user > .userName {
+    font-size: 12px;
+    color: rgb(163, 163, 163);
+}
+
+.videoItem > .right > .desc {
+    font-size: 12px;
+    color: rgb(128, 127, 127);
+    margin-top: 10px;
+
+}
+
+
+/* ---.menuButton---- --- */
+.menuButton {
+    position: absolute;
+    right: 0;
+    top: 0;
+}

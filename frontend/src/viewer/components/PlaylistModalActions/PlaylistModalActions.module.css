@@ -1,0 +1,111 @@
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 24px;
+    border-radius: 10px;
+    max-width: 260px;
+    width: 90%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+
+
+.modal button, .confirmModal button, .editModal button {
+    all: unset;
+    cursor: pointer;
+}
+
+
+
+/* 編集レイアウト */
+.editModal .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.editModal .thumArea {
+    margin-top: 30px;
+}
+
+.editModal .thumArea img {
+    width: 100%;
+    height: auto;
+}
+
+
+.editModal .uploadArea {
+    margin-top: 30px;
+}
+
+.editModal .uploadArea .editTitle {
+    font-size: 0.8rem;
+    opacity: .8;
+    color: #111;
+}
+
+
+.editModal .uploadArea input {
+    border: none;
+    outline: none;  /* フォーカス時の枠線を消す */
+    font-size: 1rem;
+    padding: 6px 2px;
+    border-bottom: 1px solid #333;
+    width: 100%;
+}
+
+.editModal .uploadArea input:focus {
+    border-bottom: 2px solid #000;
+}
+
+
+
+
+.editModal .saveButton {
+    margin: 0 auto;
+    margin-top: 30px;
+    background: teal;
+    color: #fff;
+    border-radius: 20px;
+    text-align: center;
+    padding: 10px;
+    width: 80%;
+    display: block;
+    font-weight: 700;
+    transition: all .6s;
+
+}
+
+.editModal .saveButton:hover {
+    opacity: .8;
+}
+
+
+/* 削除レイアウト */
+.confirmModal .confirmMessage {
+    text-align: center;
+}
+
+.confirmModal .confirmActions {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to  {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

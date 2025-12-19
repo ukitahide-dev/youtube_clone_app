@@ -1,0 +1,65 @@
+/* ----.channelCard---- */
+.channelCard {
+    display: flex;
+    /* position: relative; */
+    margin-top: 20px;
+    max-width: 1000px;
+
+}
+
+/* ----.channelItem---- */
+.channelItem {
+    color: #000;
+    flex: 1;
+}
+
+
+/* ----.channelItem > .channelIntro */
+.channelItem > .channelIntro {
+    display: flex;
+    gap: 10px;
+    /* background-color: pink; */
+}
+
+
+.channelIntro > .profileIcon > img {
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.channelIntro > .text > p {
+    color: rgb(106, 107, 107);
+    font-size: 13px;
+}
+
+
+/* ----.right---- */
+.right {
+    align-self: start;
+}
+
+
+.right > button {
+    width: 120px;
+    padding: 10px 12px;
+    border-radius: 20px;
+    text-align: center;
+
+}
+
+/* ----.subscButton---- */
+.subscButton {
+    background: #000;
+    color: #fff;
+
+}
+
+/* ----.subscribedButton---- */
+.subscribedButton {
+    background-color: #838383;
+    color: #fff;
+
+}

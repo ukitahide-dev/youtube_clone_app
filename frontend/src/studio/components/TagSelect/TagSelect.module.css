@@ -1,0 +1,19 @@
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag {
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+
+.activeTag {
+    background: #007bff;
+    color: white;
+    border-color: #007bff;
+}

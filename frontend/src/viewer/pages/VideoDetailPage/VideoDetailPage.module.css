@@ -1,0 +1,32 @@
+.container {
+    display: flex;
+    gap: 24px;
+    padding: 40px;
+
+}
+
+
+
+/* メインエリア */
+.mainArea {
+    width: 70%;
+
+}
+
+.mainArea .video {
+    width: 100%;
+}
+
+
+
+
+
+
+.sideArea {
+    width: 30%;
+    /* background: pink; */
+}
+
+
+
+

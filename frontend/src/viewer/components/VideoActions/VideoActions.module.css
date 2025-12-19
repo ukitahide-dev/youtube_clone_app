@@ -1,0 +1,47 @@
+/* ---.bottom---- */
+
+.bottom {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* ----.bottom > .right---- */
+
+.bottom > .right > button {
+    all: unset;
+    background: #e9e4e4;
+    color: #111;
+    cursor: pointer;
+    padding: 10px 16px;
+    border-radius: 20px;
+    transition: all .5s;
+}
+
+.bottom > .right > button:hover {
+    opacity: .8;
+}
+
+
+.bottom > .right > .likeButton {
+    background: rgb(152, 230, 218);
+    color: #fff;
+    color: #111;
+
+}
+
+.bottom > .right > .dislikeButton {
+    background: rgb(233, 118, 147);
+    color: #fff;
+    color: #111;
+
+
+}
+
+.bottom > .right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}

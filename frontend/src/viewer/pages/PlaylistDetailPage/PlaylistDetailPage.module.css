@@ -1,0 +1,66 @@
+.container {
+    display: flex;
+}
+
+/* ----.container > .main ---- */
+.container > .main {
+    flex: 1 1 0;
+    margin-top: 20px;
+    padding: 2% 4%;
+
+}
+
+/* ----.main > .videosArea---- */
+.main > .videosArea {
+    margin-top: 30px;
+}
+
+/* ----.card---- */
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    margin-top: 10px;
+    transition: all .4s ;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.card:hover {
+    background: rgb(208, 224, 253);
+}
+
+
+
+/* ----.videoItem > .content---- */
+.videoItem > .content {
+    display: flex;
+    gap: 10px;
+
+}
+
+.videoItem > .content > .nums {
+    align-self: center;
+}
+
+
+.videoItem > .content > .thumArea > img {
+    width: 180px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    aspect-ratio: 16/9;
+
+}
+
+
+
+
+.content > .text > .sub {
+    display: flex;
+    gap: 4px;
+    font-size: 12px;
+    color: rgb(103, 103, 103);
+}

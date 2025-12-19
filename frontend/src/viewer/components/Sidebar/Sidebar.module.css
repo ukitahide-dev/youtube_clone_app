@@ -1,0 +1,33 @@
+/* ----.sidebarArea---- */
+.sidebarArea {
+    width: 180px;
+    padding: 20px;
+    /* min-width: 130px; */
+    /* width: 10%; */
+    /* background-color: pink; */
+}
+
+
+/* ----.sidebarArea > .menus > li---- */
+.sidebarArea > .menus > li {
+    margin-top: 20px;
+
+}
+
+.sidebarArea > .menus > .subsc {
+    position: relative;
+}
+
+
+.menus > li > a,
+.menus > li > button {
+    display: flex;
+    flex-direction: column;   /* 主軸を縦にする */
+    align-items: center;  /* 交差軸、この場合は横方向に中央ぞろえ*/
+    color: #222;
+    width: 100%;
+}
+
+
+
+

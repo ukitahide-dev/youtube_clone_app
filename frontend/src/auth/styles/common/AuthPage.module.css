@@ -1,0 +1,80 @@
+/* ログイン画面、新規登録画面  共通のレイアウト */
+.mainTitle {
+    background: black;
+    color: #fff;
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: glow 3s infinite alternate;
+
+}
+
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px #38bdf8, 0 0 20px #38bdf8, 0 0 30px #818cf8;
+    }
+    50% {
+        text-shadow: 0 0 20px #38bdf8, 0 0 40px #38bdf8, 0 0 60px #818cf8;
+    }
+    100% {
+        text-shadow: 0 0 10px #38bdf8, 0 0 20px #38bdf8, 0 0 30px #818cf8;
+    }
+}
+
+
+.pageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: black; */
+    background: radial-gradient(circle at 20% 20%, #020a1b, #000000 70%);
+    height: 100vh;
+}
+
+
+.authCard {
+    /* background: teal; */
+    background: #134e4a;
+    padding: 2rem;
+    border-radius: 10px;
+    /* box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); */
+    box-shadow:
+    0 0 30px rgba(56, 189, 248, 0.3),   /* 水色の光 */
+    0 0 30px rgba(129, 140, 248, 0.2);  /* 紫の光 */
+    /* color: #fff; */
+    min-width: 300px;
+    text-align: center;
+    margin-top: 110px;
+
+}
+
+
+.authCard .title {
+    text-align: center;
+    color: #fff;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+
+.authCard .sub {
+    margin-top: 50px;
+    color: #fff;
+}
+
+.authCard .sub span {
+    margin-left: 100px;
+}
+
+.authCard .sub span a {
+    text-decoration: none;
+    color: rgb(46, 231, 228);
+    transition: all .5s;
+    font-weight: bold;
+}
+
+.authCard .sub span a:hover {
+    opacity: .7;
+}
