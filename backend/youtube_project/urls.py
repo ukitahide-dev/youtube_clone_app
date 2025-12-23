@@ -15,7 +15,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('videos.urls')),  # api/にアクセスしたら、videosアプリのurls.pyに処理を任せる
     path('users/', include('users.urls')),
-    path('authen/', include('djoser.urls.jwt')),
+    # path('authen/', include('djoser.urls.jwt')),
+
+    #  ここ重要
+    path('auth/', include('djoser.urls')),
+    path('auth/', include('djoser.urls.jwt')),
 
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
