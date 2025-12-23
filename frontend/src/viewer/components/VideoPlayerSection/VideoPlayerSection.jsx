@@ -32,6 +32,8 @@ function VideoPlayerSection({
     const lastPositionRef = useRef(0);   // 最後に再生した位置（秒）」を入れる箱（常に最新値を保持）最新の値を使いたい場合はstate不向き。refが適切。
 
 
+    console.log("URL id:", video?.id);
+    console.log("increment_views id:", video?.id);
 
     useEffect(() => {
         if (videosList.length > 0) {
@@ -67,7 +69,6 @@ function VideoPlayerSection({
 
 
     useEffect(() => {
-        console.log('-----token useEffect-----');
         const sendPendingWatches = async () => {
             const pending = JSON.parse(localStorage.getItem("pending_watches") || "[]");
             if (pending.length === 0) return;
@@ -171,7 +172,6 @@ function VideoPlayerSection({
 
         }
     }, [video]);
-
 
 
 

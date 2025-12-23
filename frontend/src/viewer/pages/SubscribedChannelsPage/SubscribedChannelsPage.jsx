@@ -35,11 +35,13 @@ function SubscribedChannelsPage() {
     const { accessToken } = useContext(AuthContext);
 
 
+
     // 登録したチャンネルをすべて表示する
     useEffect(() => {
         async function loadSubscribedChannels() {
             try {
                 const data = await fetchSubscribedChannels(accessToken);
+                console.log(data);
                 setChannels(data);
             } catch (err) {
                 console.error("登録チャンネル一覧の取得に失敗:", err);
@@ -48,9 +50,13 @@ function SubscribedChannelsPage() {
 
         loadSubscribedChannels();
 
-    }, [])
+    }, [accessToken, ])
 
 
+    
+    if (channels.length === 0) {
+        return <div>読み込み中...</div>;
+    }
 
 
 

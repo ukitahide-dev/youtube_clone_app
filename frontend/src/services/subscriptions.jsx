@@ -26,9 +26,10 @@ export async function fetchSubscriptions(token) {
 
 export async function fetchSubscribedChannels(token) {
     try {
-        const res = await axios.get(`${VIDEOS_API}/subscriptions/subscribed-channels`, {   // views.py/SubscriptionViewSetのカスタムメソッドsubscribed-channelsを呼ぶ
+        const res = await axios.get(`${VIDEOS_API}/subscriptions/subscribed-channels/`, {   // views.py/SubscriptionViewSetのカスタムメソッドsubscribed-channelsを呼ぶ
             headers: {Authorization: `Bearer ${token}`},
         });
+        return res.data;
     } catch (err) {
         console.error("登録チャンネル一覧の取得に失敗:", err);
     }
