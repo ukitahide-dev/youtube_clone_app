@@ -19,7 +19,6 @@ class UserManager(BaseUserManager):
 
 
     def create_superuser(self, email, password):  # python manage.py createsuperuserをターミナルで書いたときに、内部的にこの create_superuser() 関数が呼ばれる。
-        print('create_superuserが呼ばれた')
         user = self.create_user(email, password)  # まず、普通のユーザーを作る（create_user() を呼び出してる）。この時点では is_staff=False, is_superuser=False の一般ユーザー。
         user.is_staff = True   # is_staff=True → 管理画面に入れる権限
         user.is_superuser = True  # is_superuser=True → 全権限を持つ「神モード」
