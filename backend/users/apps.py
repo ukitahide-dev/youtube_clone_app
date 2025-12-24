@@ -4,6 +4,7 @@
 
 
 from django.apps import AppConfig
+from django.db.utils import OperationalError
 from django.contrib.auth import get_user_model
 import os
 
@@ -24,8 +25,9 @@ class UsersConfig(AppConfig):
         if not email or not password:
             return
 
-        if not User.objects.filter(email=email).exists():
-            User.objects.create_superuser(
-                email=email,
-                password=password
-            )
+        try:
+            if not User.objects.filter(email=email).exists():
+                User.objects.create_superuser(email=email, password=password)
+        except OperationalError:
+            # マイグレーション前はスキップ
+            pass
