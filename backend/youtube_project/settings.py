@@ -69,7 +69,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'users.apps.UsersConfig',  # 追記
 
     # 追記
     # 外部パッケージ
@@ -82,7 +81,7 @@ INSTALLED_APPS = [
 
 
     # 自作アプリ
-    'users',
+    'users.apps.UsersConfig',
     'videos',
 ]
 
