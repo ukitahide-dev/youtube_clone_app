@@ -8,7 +8,7 @@ import { fetchSearchedVideos } from "../../../services/videos";
 
 
 // ----components----
-import SideBar from "../../components/SideBar/SideBar";
+import Sidebar from "../../components/Sidebar/Sidebar";
 import VideoModalMenu from "../../components/VideoModalMenu/VideoModalMenu";
 
 
@@ -66,7 +66,7 @@ function SearchResultsPage() {
 
     return (
         <div className={SearchResultsPageStyles.container}>
-            <SideBar />
+            <Sidebar />
             <div className={SearchResultsPageStyles.cardList}>
                 {videos.map(video => (
                     <div className={SearchResultsPageStyles.card}>
