@@ -7,7 +7,7 @@ import { fetchChannelDetail } from '../../../services/uploaders'
 
 
 // -----component-----
-import SideBar from '../../components/SideBar/SideBar.jsx'
+import Sidebar from '../../components/Sidebar/Sidebar.jsx'
 import ChannelVideos from './components/ChannelVideos/ChannelVideos.jsx'
 import HomeTab from './components/HomeTab/HomeTab'
 
@@ -55,7 +55,7 @@ function ChannelDetailPage() {
 
     return (
         <div className={ChannelDetailPageStyles.container}>
-            <SideBar />
+            <Sidebar />
             <div className={ChannelDetailPageStyles.main}>
                 <div className={ChannelDetailPageStyles.coverImage}>
                     <img src={channel.cover_image} alt="" />
