@@ -19,7 +19,7 @@ import LogoutPage from '../../auth/pages/LogoutPage.jsx'
 import VideoDetailPage from '../pages/VideoDetailPage/VideoDetailPage.jsx'
 import SubscribedVideosPage from '../pages/SubscribedVideosPage/SubscribedVideosPage.jsx'
 import UserPlaylistPage from '../pages/UserPlaylistPage/UserPlaylistPage.jsx'
-import MyPage from '../pages/Mypage/MyPage.jsx'
+import MyPage from "../pages/MyPage/MyPage.jsx";
 import SubscribedChannelsPage from '../pages/SubscribedChannelsPage/SubscribedChannelsPage.jsx'
 import ChannelDetailPage from '../pages/ChannelDetailPage/ChannelDetailPage.jsx'
 import PLaylistDetailPage from '../pages/PlaylistDetailPage/PlaylistDetailPage.jsx'
