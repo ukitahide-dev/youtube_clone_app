@@ -9,7 +9,7 @@ import { fetchVideos } from '../../../services/videos'
 
 // -----component----
 import VideoList from '../../components/VideoList/VideoList.jsx';
-import SideBar from '../../components/SideBar/SideBar.jsx';
+import Sidebar from '../../components/Sidebar/Sidebar.jsx';
 
 // -----css------
 import HomePageStyles from './HomePage.module.css';
@@ -50,7 +50,7 @@ function HomePage() {
     return (
         <div className={HomePageStyles.videoContainer}>
 
-            <SideBar />
+            <Sidebar />
             <VideoList
                 videos={videos}
             />
