@@ -6,7 +6,7 @@ import { AuthContext } from '../../../context/AuthContext'
 import { BASE_URL } from '../../../services/api'
 
 // ----components----
-import SideBar from '../../components/SideBar/SideBar'
+import Sidebar from '../../components/Sidebar/Sidebar'
 import PlaylistPart from './components/PlaylistPart/PlaylistPart'
 import LikeVideoPart from './components/LikeVideoPart/LikeVideoPart'
 
@@ -29,7 +29,7 @@ function MyPage() {
 
     return (
         <div className={MypageStyles.container}>
-            <SideBar />
+            <Sidebar />
             <div className={MypageStyles.mainArea}>
                 <div className={MypageStyles.profileArea}>
                     <img
