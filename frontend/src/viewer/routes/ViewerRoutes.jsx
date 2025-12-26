@@ -22,7 +22,7 @@ import UserPlaylistPage from '../pages/UserPlaylistPage/UserPlaylistPage.jsx'
 import MyPage from "../pages/MyPage/MyPage.jsx";
 import SubscribedChannelsPage from '../pages/SubscribedChannelsPage/SubscribedChannelsPage.jsx'
 import ChannelDetailPage from '../pages/ChannelDetailPage/ChannelDetailPage.jsx'
-import PLaylistDetailPage from '../pages/PlaylistDetailPage/PlaylistDetailPage.jsx'
+import PlaylistDetailPage from '../pages/PlaylistDetailPage/PlaylistDetailPage.jsx'
 import SearchResultsPage from '../pages/SearchResultsPage/SearchResultsPage.jsx'
 import LikeVideosPage from '../pages/LikeVideosPage/LikeVideosPage.jsx'
 
@@ -127,7 +127,7 @@ function ViewerRoutes() {
                 element={
                     <RequireAuth>
                         <Header />
-                        <PLaylistDetailPage />
+                        <PlaylistDetailPage />
                     </RequireAuth>
                 }
             />
