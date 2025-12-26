@@ -3,7 +3,7 @@ import uuid
 
 from users.models import User
 from django.core.exceptions import ValidationError
-
+from django.conf import settings
 
 
 
@@ -40,8 +40,7 @@ class Video(models.Model):
     id = models.UUIDField(default=uuid.uuid4, primary_key=True, editable=False)
     uploader = models.ForeignKey(User, on_delete=models.CASCADE, related_name='uploaded_videos', null=True)   # 動画投稿者
     title = models.CharField(max_length=30, blank=False, db_index=True)
-    video = models.FileField(blank=False, upload_to=load_path_video)  # 動画ファイル自体。必須。upload_to=load_path_video で保存先を指定。
-    thum = models.ImageField(blank=False,  upload_to=load_path_thum)  # 動画のサムネイル画像。必須。保存先は load_path_thum で指定。
+
     like = models.PositiveIntegerField(default=0)      # 各動画に対するいいねの総数
     dislike = models.PositiveIntegerField(default=0)
     views = models.PositiveIntegerField(default=0)     # 再生数
@@ -51,6 +50,15 @@ class Video(models.Model):
     tags = models.ManyToManyField(Tag, blank=True)
     uploaded_at = models.DateTimeField(auto_now_add=True, db_index=True)   # アップロード日時  「新着動画順」などの並び替えができる。
     updated_at = models.DateTimeField(auto_now=True)
+
+
+    # 開発用
+    video = models.FileField(upload_to=load_path_video, blank=True, null=True)  # 動画ファイル自体。必須。upload_to=load_path_video で保存先を指定。
+    thum = models.ImageField(upload_to=load_path_thum, blank=True, null=True)  # 動画のサムネイル画像。必須。保存先は load_path_thum で指定。
+
+    # 本番用
+    video_url = models.URLField(blank=True, null=True)
+    thumbnail_url = models.URLField(blank=True, null=True)
 
 
     def __str__(self):

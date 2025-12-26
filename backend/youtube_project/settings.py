@@ -59,6 +59,8 @@ CSRF_TRUSTED_ORIGINS = [
 
 
 
+USE_UPLOAD = os.getenv("USE_UPLOAD", "True") == "True"
+
 
 
 # Application definition

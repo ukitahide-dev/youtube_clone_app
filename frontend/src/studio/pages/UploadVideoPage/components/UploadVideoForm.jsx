@@ -69,12 +69,24 @@ function UploadVideoForm({ categories, tags, }) {
             return;
         }
 
-        const formData = new FormData();
-        formData.append("title", title);
-        formData.append("description", desc);
-        formData.append("video", videoFile);
-        formData.append("thum", thumbnail);
-        formData.append("category", selectedCategory);
+        // 開発環境の場合
+        if (useUpload) {
+            const formData = new FormData();
+            formData.append("title", title);
+            formData.append("description", desc);
+            formData.append("video", videoFile);
+            formData.append("thum", thumbnail);
+            formData.append("category", selectedCategory);
+        } else {
+            const payload = {
+                title,
+                description: desc,
+                video_url: videoFile,
+                thumbnail_url: thumbnail,
+                category: selectedCategory,
+                tags: selectedTags,
+            };
+        }
 
         selectedTags.forEach(tagId => {
             formData.append("tags", tagId);
@@ -89,7 +101,7 @@ function UploadVideoForm({ categories, tags, }) {
                 },
             });
 
-            // 投稿完了 → 動画詳細ページに飛ぶ。viewer/VideoDetailPage.jsx
+            // 投稿完了 -> viewer/VideoDetailPage.jsxに飛ぶ。
             navigate(`/videos/${res.data.id}`);
 
         } catch (err) {
@@ -131,21 +143,39 @@ function UploadVideoForm({ categories, tags, }) {
                 toggleTag={toggleTag}
             />
 
-            <FileInput
-                label="動画ファイル"
-                accept="video/*"
-                onChange={setVideoFile}
-                file={videoFile}
-                variant="video"
-            />
+            {useUpload ? (
+                <FileInput
+                    label="動画ファイル"
+                    accept="video/*"
+                    onChange={setVideoFile}
+                    file={videoFile}
+                    variant="video"
+                />
+                ) : (
+                <input
+                    type="text"
+                    placeholder="動画URLを入力"
+                    value={videoFile}
+                    onChange={(e) => setVideoFile(e.target.value)}
+                />
+            )}
 
-            <FileInput
-                label="サムネイル"
-                accept="image/*"
-                onChange={setThumbnail}
-                file={thumbnail}
-                variant="thumbnail"
-            />
+            {useUpload ? (
+                <FileInput
+                    label="サムネイル"
+                    accept="image/*"
+                    onChange={setThumbnail}
+                    file={thumbnail}
+                    variant="thumbnail"
+                />
+                ) : (
+                <input
+                    type="text"
+                    placeholder="サムネイルURLを入力"
+                    value={thumbnail}
+                    onChange={(e) => setThumbnail(e.target.value)}
+                />
+            )}
 
             <button type="submit" className={UploadVideoFormStyles.submitBtn}>
                 投稿する

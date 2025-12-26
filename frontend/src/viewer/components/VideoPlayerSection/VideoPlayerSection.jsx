@@ -32,8 +32,7 @@ function VideoPlayerSection({
     const lastPositionRef = useRef(0);   // 最後に再生した位置（秒）」を入れる箱（常に最新値を保持）最新の値を使いたい場合はstate不向き。refが適切。
 
 
-    console.log("URL id:", video?.id);
-    console.log("increment_views id:", video?.id);
+
 
     useEffect(() => {
         if (videosList.length > 0) {
@@ -111,9 +110,6 @@ function VideoPlayerSection({
     const sendWatchDuration = async () => {
         const duration = Math.floor(videoRef.current.currentTime);
 
-        console.log('----duration----');
-        console.log(duration);
-
         try {
             await axios.post(
                 `${VIDEOS_API}/videos/${video.id}/increment_views/`,
@@ -148,7 +144,6 @@ function VideoPlayerSection({
     useEffect(() => {
         return () => {
             let duration = lastPositionRef.current;   // 最新の値を取得
-            console.log('---ページ離脱時のduration---', duration);
 
             if (videoRef.current) {
                 duration = Math.floor(videoRef.current.currentTime);
@@ -167,9 +162,6 @@ function VideoPlayerSection({
             pending.push(pendingData);
             localStorage.setItem("pending_watches", JSON.stringify(pending));
 
-            console.log('-----ページ離脱時のpendingの中身-----');
-            console.log(pending);
-
         }
     }, [video]);
 
@@ -177,16 +169,29 @@ function VideoPlayerSection({
 
 
     return (
-        <video
-            ref={videoRef}
-            src={video.video}
-            controls
-            autoPlay
-            onEnded={handleVideoEnd}
-            // onTimeUpdate={handleTimeUpdate}
-            style={{ width: '100%' }}
-        />
-    )
+        video.video_url ? (  // 本番用
+            <iframe
+                src={video.video_url}
+                width="100%"
+                height="480"
+                // frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                title={video.title}
+            />
+        ) : (  // 開発用
+            <video
+                ref={videoRef}
+                src={video.video}
+                controls
+                autoPlay
+                onEnded={handleVideoEnd}
+                // onTimeUpdate={handleTimeUpdate}
+                style={{ width: '100%' }}
+            />
+        )
+    );
+
 }
 
 

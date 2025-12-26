@@ -9,7 +9,9 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = get_user_model()   # get_user_model() を呼ぶと、Django で設定したカスタムユーザーモデル（users.User）を使うことになる。
-        fields = ('email', 'password', 'username', 'id', 'profile_icon', 'cover_image', 'subscriber_count')
+        fields = ('email', 'password', 'username', 'id',
+                'profile_icon', 'cover_image', 'subscriber_count',
+                'profile_icon_url', 'cover_image_url')
         extra_kwargs = {'password': {'write_only': True, 'min_length': 5}}
 
 
@@ -17,7 +19,7 @@ class UserSerializer(serializers.ModelSerializer):
         user = get_user_model().objects.create_user(**validated_data)
 
         return user
-
+    
 
     def get_subscriber_count(self, obj):
         return obj.subscribers.count()

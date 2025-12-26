@@ -2,7 +2,7 @@ from django.db import models
 
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 import uuid
-
+from django.conf import settings
 
 
 
@@ -33,15 +33,23 @@ class UserManager(BaseUserManager):
 class User(AbstractBaseUser, PermissionsMixin):
     id = models.UUIDField(default=uuid.uuid4, primary_key=True, editable=False) # ユーザーのIDにUUID（ユニークな識別子）を使っている。セキュリティや一意性の観点から、推測しにくい ID にしたいときに便利。連番（1, 2, 3...）だとユーザーの合計数や順番がバレるリスクがある。
     email = models.EmailField(max_length=255, unique=True)
-    username = models.CharField(max_length=255, blank=True) # ユーザー名を保存するフィールド（任意）。空でもOK。
-    profile_icon = models.ImageField(upload_to='profile-icons/', blank=True, null=True)
-    cover_image = models.ImageField(upload_to='profile-covers/', blank=True, null=True)
+    username = models.CharField(max_length=255, blank=True)   # ユーザー名を保存するフィールド（任意）。空でもOK。
+
 
     is_active = models.BooleanField(default=True)  # アカウントの有効・無効を判定するフラグ。
     is_staff = models.BooleanField(default=False)  # 管理サイトにアクセスできるかどうかを示すフラグ。
 
     objects = UserManager()  # このモデル専用のマネージャー（UserManager クラス）を指定している。User.objects.create_user(...) やUser.objects.create_superuser(...)などで呼び出される処理を、この UserManager に委ねる、という意味。
     USERNAME_FIELD = 'email' # Djangoに「認証に使うフィールドは email ですよ」と教えている。
+
+    # ローカル(開発)用
+    profile_icon = models.ImageField(upload_to='profile-icons/', blank=True, null=True)
+    cover_image = models.ImageField(upload_to='profile-covers/', blank=True, null=True)
+
+    # render(本番)用
+    profile_icon_url = models.URLField(blank=True, null=True)
+    cover_image_url = models.URLField(blank=True, null=True)
+
 
     def __str__(self):
         return self.email

@@ -11,7 +11,7 @@ from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated, AllowAny
 
 from django.utils import timezone
-
+from django.conf import settings
 
 
 
@@ -35,7 +35,6 @@ class VideoViewSet(viewsets.ModelViewSet):
     # このViewSetで使うシリアライザを返すメソッド。get_serializer_class() は 「どのクラスを使うかを返すだけ。ModelViewSetの親が標準で持っているget_serializer_classメソッドをオーバーライドしてる。VideoViewSetから見ると、親の親つまり、じっちゃん。
     def get_serializer_class(self):  # 用途：どのシリアライザで JSON を返すか決める。
         if self.action == 'retrieve':  # retrieve（1本の動画詳細取得）は VideoDetailSerializer。DRFでは VideoViewSet を router.register('videos', VideoViewSet) でルーティングしていると、/videos/<pk>/ に GET リクエストが来ると自動的に retrieve メソッド が呼ばれる。
-            print('VideoDetailSerializerがVideoViewSetから返された')
             return VideoDetailSerializer   # returnで、このクラスを使ってくださいと DRF に伝えているだけ。実際の JSON 生成や保存処理は、その後 DRF が自動的に呼ぶ serializer = serializer_class(...) で実行。
 
         return VideoSerializer
@@ -43,10 +42,16 @@ class VideoViewSet(viewsets.ModelViewSet):
 
 
 
-    # 新しい動画を作るときに自動で呼ばれる特別なメソッド。フロントから POST リクエストが送られて呼ばれる。
+    # 新しい動画を作るときに自動で呼ばれる特別なメソッド。フロントからPOSTリクエストが送られて呼ばれる。
     def perform_create(self, serializer):
         if self.request.user.is_authenticated:
-            serializer.save(uploader=self.request.user)  # ログインユーザーを自動で投稿者にセット。DBに保存される。
+            if settings.USE_UPLOAD:  # 開発用
+                serializer.save(uploader=self.request.user)  # ログインユーザーを自動で投稿者にセット。DBに保存される。
+            else:  # 本番用
+                video_url = self.request.data.get("video_url")
+                if not video_url:
+                    raise ValidationError("動画URLが必要です")
+                serializer.save(uploader=self.request.user)
         else:
             raise ValidationError("ログインしていないため、動画を投稿できません")
 

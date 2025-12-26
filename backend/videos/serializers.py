@@ -14,6 +14,7 @@ from .models import (
 
 from users.models import User  # SubscriptionやUploaderSerializerで使う
 
+from django.conf import settings
 
 
 
@@ -52,7 +53,7 @@ class VideoSerializer(serializers.ModelSerializer):
             'id', 'title', 'video', 'thum', 'uploader', 'uploaded_at','description',
             'like', 'dislike', 'views',
             'category', 'tags', 'uploaded_at', 'updated_at', 'uploader_name', 'subscriber_count',
-            'uploader_icon',
+            'uploader_icon', 'video_url', 'thumbnail_url',
         ]
 
         # read_only_fields → 受信時は無視される（クライアントから値を入れられない）。例：uploader はログインユーザーから自動で設定するから、フロントからは送らせない。
@@ -73,6 +74,23 @@ class VideoSerializer(serializers.ModelSerializer):
 
         instance.save()
         return instance
+
+
+    def validate(self, data):
+        use_upload = settings.USE_UPLOAD
+
+        if use_upload:  # 開発用の場合
+            if not data.get("video"):
+                raise serializers.ValidationError("動画ファイルは必須です")
+            if not data.get("thum"):
+                raise serializers.ValidationError("サムネイルは必須です")
+        else:  # 本番用の場合
+            if not data.get("video_url"):
+                raise serializers.ValidationError("動画URLは必須です")
+            if not data.get("thumbnail_url"):
+                raise serializers.ValidationError("サムネイルURLは必須です")
+
+        return data
 
 
 
