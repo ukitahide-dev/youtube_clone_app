@@ -16,7 +16,7 @@ import { TimeSince } from '../../../utils/TimeSince';
 
 
 // ----components----
-import SideBar from '../../components/SideBar/SideBar';
+import Sidebar from '../../components/Sidebar/Sidebar';
 import PlaylistVideoModalMenu from '../../components/PlaylistVideoModalMenu/PlaylistVideoModalMenu';
 
 
@@ -82,7 +82,7 @@ function PlaylistDetailPage() {
 
     return (
         <div className={PlaylistDetailPageStyles.container}>
-            <SideBar />
+            <Sidebar />
             <div className={PlaylistDetailPageStyles.main}>
                 <h2 className={PlaylistDetailPageStyles.playlistTitle}>{playlist.name}</h2>
                 {/* <div className={PlaylistDetailPageStyles.buttons}>
