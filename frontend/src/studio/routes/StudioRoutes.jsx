@@ -7,7 +7,7 @@ import ContentsPage from "../pages/ContentsPage/ContentsPage.jsx";
 import VideosPage from "../pages/VideosPage/VideosPage.jsx";
 import PlaylistsPage from "../pages/PlaylistsPage/PlaylistsPage.jsx";
 import ChannelAnalyticsPage from "../pages/ChannelAnalyticsPage/ChannelAnalyticsPage.jsx";
-import OverviewPage from "../pages/OverviewPage/OverviewPage.jsx";
+import OverViewPage from "../pages/OverViewPage/OverViewPage.jsx";
 
 
 // -----components-----
@@ -63,7 +63,7 @@ function StudioRoutes() {
                     }
                 >
 
-                    <Route path="channel/overview" element={<OverviewPage />} />
+                    <Route path="channel/overview" element={<OverViewPage />} />
 
                 </Route>
 
