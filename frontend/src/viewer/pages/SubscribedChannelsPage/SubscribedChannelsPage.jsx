@@ -12,7 +12,7 @@ import { AuthContext } from "../../../context/AuthContext";
 
 // ----components----
 import ChannelCard from "../../components/ChannelCard/ChannelCard";
-import SideBar from "../../components/SideBar/SideBar";
+import Sidebar from "../../components/Sidebar/Sidebar";
 
 
 // -----css-----
@@ -53,7 +53,7 @@ function SubscribedChannelsPage() {
     }, [accessToken, ])
 
 
-    
+
     if (channels.length === 0) {
         return <div>読み込み中...</div>;
     }
@@ -63,7 +63,7 @@ function SubscribedChannelsPage() {
 
     return (
         <div className={SubscribedChannelsPageStyles.container}>
-            <SideBar />
+            <Sidebar />
             <div className={SubscribedChannelsPageStyles.main}>
                 <h2 className={SubscribedChannelsPageStyles.mainTitle}>登録チャンネル</h2>
                 <div className={SubscribedChannelsPageStyles.channels}>
