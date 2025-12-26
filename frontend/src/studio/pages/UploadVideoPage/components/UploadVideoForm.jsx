@@ -72,9 +72,10 @@ function UploadVideoForm({ categories, tags, }) {
             return;
         }
 
+        const formData = new FormData();
+
         // 開発環境の場合
         if (useUpload) {
-            const formData = new FormData();
             formData.append("title", title);
             formData.append("description", desc);
             formData.append("video", videoFile);
