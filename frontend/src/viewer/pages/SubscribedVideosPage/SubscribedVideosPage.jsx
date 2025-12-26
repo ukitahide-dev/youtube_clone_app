@@ -11,7 +11,7 @@ import { AuthContext } from '../../../context/AuthContext'
 
 
 // ----components----
-import SideBar from '../../components/SideBar/SideBar.jsx';
+import Sidebar from '../../components/Sidebar/Sidebar.jsx';
 import VideoList from '../../components/VideoList/VideoList.jsx';
 
 
@@ -63,7 +63,7 @@ function SubscribedVideosPage () {
 
     return (
         <div className={SubscribedVideosPageStyles.videoContainer}>
-            <SideBar />
+            <Sidebar />
             <VideoList
                 videos={videos}
             />
