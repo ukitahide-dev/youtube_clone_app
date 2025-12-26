@@ -8,7 +8,7 @@ import { fetchViewerPlaylists } from '../../../services/playlists';
 
 // -----component-----
 import PlaylistCard from '../../components/PlaylistCard/PlaylistCard';
-import SideBar from '../../components/SideBar/SideBar';
+import Sidebar from '../../components/Sidebar/Sidebar';
 
 
 // -----css------
@@ -54,7 +54,7 @@ function UserPlaylistPage() {
 
     return (
         <div className={UserPlaylistPageStyles.videoContainer}>
-            <SideBar />
+            <Sidebar />
 
             <div className={UserPlaylistPageStyles.mainArea}>
                 <div className={UserPlaylistPageStyles.mainTitle}>
