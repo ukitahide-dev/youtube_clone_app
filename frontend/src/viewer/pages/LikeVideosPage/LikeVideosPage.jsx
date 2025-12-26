@@ -8,7 +8,7 @@ import { AuthContext } from "../../../context/AuthContext";
 import { fetchLikedVideos } from "../../../services/Likes";
 
 // ----components----
-import SideBar from "../../components/SideBar/SideBar";
+import Sidebar from "../../components/Sidebar/Sidebar";
 import LikeVideoList from "./components/LikeVideoList/LikeVideoList";
 
 
@@ -42,7 +42,7 @@ function LikeVideosPage() {
 
     return (
         <div className={LikeVideosPageStyles.videoContainer}>
-            <SideBar />
+            <Sidebar />
             <LikeVideoList
                 videos={likedVideos}
                 setLikedVideos={setLikedVideos}
