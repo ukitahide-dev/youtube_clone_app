@@ -26,4 +26,4 @@ dist-ssr
 
 # 追記
 .env
-.env.*
+.env.example

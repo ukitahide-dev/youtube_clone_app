@@ -12,6 +12,9 @@ import { VIDEOS_API } from "../../../../services/api";
 // ----context----
 import { AuthContext } from "../../../../context/AuthContext";
 
+// config.js
+import { useUpload } from "../../../../config";
+
 
 // ----components----
 import TagSelect from "../../../components/TagSelect/TagSelect";

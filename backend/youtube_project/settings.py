@@ -58,7 +58,7 @@ CSRF_TRUSTED_ORIGINS = [
 ]
 
 
-
+# 動画やサムネイルの扱いを開発・本番で分ける。
 USE_UPLOAD = os.getenv("USE_UPLOAD", "True") == "True"
 
 

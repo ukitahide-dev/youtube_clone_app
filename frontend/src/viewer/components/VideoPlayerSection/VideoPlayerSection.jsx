@@ -8,6 +8,8 @@ import { VIDEOS_API } from '../../../services/api'
 import axios from 'axios'
 
 
+// ----.config.js
+import { useUpload } from '../../../config'
 
 
 // 親: VideoDetailPage.jsx
@@ -169,17 +171,7 @@ function VideoPlayerSection({
 
 
     return (
-        video.video_url ? (  // 本番用
-            <iframe
-                src={video.video_url}
-                width="100%"
-                height="480"
-                // frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                title={video.title}
-            />
-        ) : (  // 開発用
+        useUpload ? (  // 開発用
             <video
                 ref={videoRef}
                 src={video.video}
@@ -188,6 +180,17 @@ function VideoPlayerSection({
                 onEnded={handleVideoEnd}
                 // onTimeUpdate={handleTimeUpdate}
                 style={{ width: '100%' }}
+            />
+
+        ) : (  // 本番用
+            <iframe
+                src={video.video_url}
+                width="100%"
+                height="480"
+                // frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                title={video.title}
             />
         )
     );
