@@ -6,6 +6,9 @@ import { useContext, useState } from 'react'
 // ----components----
 import VideoModalMenu from '../VideoModalMenu/VideoModalMenu'
 
+// ----config----
+import { useUpload } from '../../../config'
+
 
 // -----css-----
 import VideoListStyles from './VideoList.module.css'
@@ -45,7 +48,7 @@ function VideoList({ videos }) {
                             <div className={VideoListStyles.thumArea}>
                                 <img
                                     className={VideoListStyles.thum}
-                                    src={video.thum}
+                                    src={useUpload ? video.thum : video.thumbnail_url}
                                     alt={video.title}
                                 />
                             </div>
