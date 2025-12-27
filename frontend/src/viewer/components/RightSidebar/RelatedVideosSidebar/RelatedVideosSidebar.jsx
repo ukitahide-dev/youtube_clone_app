@@ -28,7 +28,7 @@ import { faEllipsisV } from '@fortawesome/free-solid-svg-icons'
 
 
 
-
+import { getThum } from '../../../../utils/getThum';
 
 
 
@@ -73,7 +73,7 @@ function RelatedVideosSidebar({ video, }) {
                     {/* viewer/VideoDetailPage.jsxに飛ぶ */}
                     <Link to={`/videos/${v.id}`} className={RelatedVideosSidebarStyles.videoItem}>
                         <div className={RelatedVideosSidebarStyles.left}>
-                            <img src={v.thum} alt={v.title} />
+                            <img src={getThum(v)} alt={v.title} />
                         </div>
 
                         <div className={RelatedVideosSidebarStyles.right}>

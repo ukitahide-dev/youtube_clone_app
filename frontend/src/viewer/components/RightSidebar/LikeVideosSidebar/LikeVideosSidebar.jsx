@@ -26,6 +26,8 @@ import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { faEllipsisV } from '@fortawesome/free-solid-svg-icons';
 
 
+// ----utils----
+import { getThum } from '../../../../utils/getThum';
 
 
 // 親: VideoDetailPage.jsx
@@ -107,7 +109,7 @@ function LikeVideosSidebar({ onVideosFetched, currentVideoId }) {
                                     <div className={LikeVideosSidebarStyles.left}>
                                         <span>{index + 1}</span>
                                         <img
-                                            src={video.thum}
+                                            src={getThum(video)}
                                             alt={video.title}
                                             className={LikeVideosSidebarStyles.thumbnail}
                                         />

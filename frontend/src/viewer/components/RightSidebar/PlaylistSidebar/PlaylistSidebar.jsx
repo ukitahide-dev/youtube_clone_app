@@ -26,7 +26,7 @@ import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { faEllipsisV } from '@fortawesome/free-solid-svg-icons';
 
 
-
+import { getThum } from '../../../../utils/getThum';
 
 // 親: VideoDetailPage.jsx
 // 役割: サイドバーにプレイリスト詳細内の動画をすべて表示。
@@ -123,7 +123,7 @@ function PlaylistSidebar({
                                     <div className={PlaylistSidebarStyles.left}>
                                         <span>{index + 1}</span>
                                         <img
-                                            src={video.thum}
+                                            src={getThum(video)}
                                             alt={video.title}
                                             className={PlaylistSidebarStyles.thumbnail}
                                         />
