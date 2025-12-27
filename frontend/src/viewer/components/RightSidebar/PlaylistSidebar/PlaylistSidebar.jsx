@@ -25,7 +25,7 @@ import { faShuffle } from '@fortawesome/free-solid-svg-icons';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { faEllipsisV } from '@fortawesome/free-solid-svg-icons';
 
-
+// ----utils----
 import { getThum } from '../../../../utils/getThum';
 
 // 親: VideoDetailPage.jsx
@@ -40,7 +40,6 @@ function PlaylistSidebar({
     type,
     currentVideoId,
     uploaderId,
-    // onVideosFetched,
 }) {
     const { accessToken } = useContext(AuthContext);
 

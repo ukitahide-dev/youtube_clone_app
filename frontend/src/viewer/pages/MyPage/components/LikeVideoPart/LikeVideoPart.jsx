@@ -11,6 +11,10 @@ import { fetchLikedVideos } from '../../../../../services/Likes'
 import { AuthContext } from '../../../../../context/AuthContext'
 
 
+// ----utils----
+import { getThum } from '../../../../../utils/getThum'
+
+
 // ----components----
 import ContentSection from '../ContentSection/ContentSection'
 import LikeVideoModalMenu from '../../../../components/LikeVideoModalMenu/LikeVideoModalMenu'
@@ -23,7 +27,6 @@ import LikeVideoPartStyles from './LikeVideoPart.module.css'
 //  -----fontAwsome-----
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEllipsisV } from '@fortawesome/free-solid-svg-icons'
-
 
 
 
@@ -93,7 +96,7 @@ function LikeVideoPart() {
                         className={`${LikeVideoPartStyles.thumArea}`}
                         key={video.id}
                     >
-                        <img src={`${video.thum}`} alt={video.title} />
+                        <img src={getThum(video)} alt={video.title} />
                     </div>
                 </Link>
                 <div className={LikeVideoPartStyles.sub}>

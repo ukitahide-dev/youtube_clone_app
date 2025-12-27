@@ -27,7 +27,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEllipsisV } from '@fortawesome/free-solid-svg-icons'
 
 
-
+// ----utils----
 import { getThum } from '../../../../utils/getThum';
 
 

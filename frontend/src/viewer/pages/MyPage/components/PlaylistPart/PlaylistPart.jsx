@@ -27,7 +27,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEllipsisV } from '@fortawesome/free-solid-svg-icons'
 
 
-
+// ----utils----
+import { getPlaylistThum } from '../../../../../utils/getThum'
 
 
 // 親: MyPage.jsx
@@ -79,7 +80,7 @@ function PlaylistPart() {
                         key={pl.id}
                     >
                         <img
-                            src={`${pl.video_details[0]?.thum}`}
+                            src={getPlaylistThum(pl.video_details)}
                             alt={pl.video_details.title}
                         />
                         <div className={playlistCardStyles.videoNums}>
