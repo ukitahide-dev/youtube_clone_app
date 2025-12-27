@@ -2,6 +2,9 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
+// ----utils----
+import { getThum } from '../../../utils/getThum.js';
+
 
 // ----components----
 import PlaylistModalActions from '../PlaylistModalActions/PlaylistModalActions.jsx';
@@ -45,7 +48,7 @@ function PlaylistCard({ playlist, onSelectVideo, setPlaylists }) {
                         <div className={playlistCardStyles.thumArea}>
                             <img
                                 className={playlistCardStyles.thum}
-                                src={latestVideo.thum}
+                                src={getThum(latestVideo)}
                                 alt={latestVideo.title}
                                 onClick={() => onSelectVideo(latestVideo)}
                             />
