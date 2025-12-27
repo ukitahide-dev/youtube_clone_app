@@ -19,7 +19,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEllipsisV } from '@fortawesome/free-solid-svg-icons'
 import { TimeSince } from '../../../utils/TimeSince'
 
-
+// ----utils----
+import { getThum } from '../../../utils/getThum'
 
 
 // 親: HomePage.jsx、SubscribedVideosPage.jsx
@@ -48,7 +49,7 @@ function VideoList({ videos }) {
                             <div className={VideoListStyles.thumArea}>
                                 <img
                                     className={VideoListStyles.thum}
-                                    src={useUpload ? video.thum : video.thumbnail_url}
+                                    src={getThum(video)}
                                     alt={video.title}
                                 />
                             </div>
