@@ -12,6 +12,7 @@ import { VIDEOS_API } from "../../../../services/api";
 // ----context----
 import { AuthContext } from "../../../../context/AuthContext";
 
+
 // config.js
 import { useUpload } from "../../../../config";
 
@@ -51,7 +52,6 @@ function UploadVideoForm({ categories, tags, }) {
 
 
 
-
     // タグの追加・削除切り替え
     const toggleTag = (tagId) => {
         if (selectedTags.includes(tagId)) {
@@ -67,34 +67,37 @@ function UploadVideoForm({ categories, tags, }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if (!videoFile || !thumbnail) {
-            alert("動画ファイルとサムネイルは必須です");
-            return;
-        }
-
         const formData = new FormData();
 
-        // 開発環境の場合
-        if (useUpload) {
-            formData.append("title", title);
-            formData.append("description", desc);
-            formData.append("video", videoFile);
-            formData.append("thum", thumbnail);
-            formData.append("category", selectedCategory);
-        } else {
-            const payload = {
-                title,
-                description: desc,
-                video_url: videoFile,
-                thumbnail_url: thumbnail,
-                category: selectedCategory,
-                tags: selectedTags,
-            };
-        }
+        formData.append("title", title);
+        formData.append("description", desc);
+        formData.append("category", selectedCategory);
 
         selectedTags.forEach(tagId => {
             formData.append("tags", tagId);
         });
+
+        
+        if (useUpload) {
+            // 開発用（ファイル）
+            if (!videoFile || !thumbnail) {
+                alert("動画ファイルとサムネイルは必須です");
+                return;
+            }
+
+            formData.append("video", videoFile);
+            formData.append("thum", thumbnail);
+
+        } else {
+            // 本番用（URL）
+            if (!videoFile || !thumbnail) {
+                alert("動画URLとサムネイルURLは必須です");
+                return;
+            }
+
+            formData.append("video_url", videoFile);
+            formData.append("thumbnail_url", thumbnail);
+        }
 
 
         try {

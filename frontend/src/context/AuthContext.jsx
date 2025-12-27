@@ -19,7 +19,6 @@ export const AuthContext = createContext();   // createContext() を呼ぶと Co
 
 
 export function AuthProvider({ children }) {
-    // console.log('AuthProviderが呼ばれた');
     const [accessToken, setAccessToken] = useState(localStorage.getItem("accessToken") || null);
     const [refreshToken, setRefreshToken] = useState(localStorage.getItem("refreshToken") || null);
     const [user, setUser] = useState(null);
