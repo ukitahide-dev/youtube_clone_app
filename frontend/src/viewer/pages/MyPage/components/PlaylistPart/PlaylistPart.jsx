@@ -51,7 +51,10 @@ function PlaylistPart() {
         async function loadPlaylists() {
             try {
                 const res = await fetchViewerPlaylists(accessToken)
-                setPlaylists(res.slice(0, 12))
+                setPlaylists(res.slice(0, 12));
+                console.log('----playlistsの中身----')
+                console.log(playlists);
+
             } catch (err) {
                 console.error('プレイリスト取得失敗', err)
             }
@@ -80,7 +83,7 @@ function PlaylistPart() {
                         key={pl.id}
                     >
                         <img
-                            src={getPlaylistThum(pl.video_details)}
+                            src={getPlaylistThum(pl.video_details[0])}
                             alt={pl.video_details.title}
                         />
                         <div className={playlistCardStyles.videoNums}>

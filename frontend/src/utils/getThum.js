@@ -7,5 +7,5 @@ export const getThum = (video) => {
 
 
 export const getPlaylistThum = (video_details) => {
-    return useUpload ? video_details[0].thum : video_details[0].thumbnail_url
+    return useUpload ? video_details.thum : video_details.thumbnail_url
 }

@@ -42,11 +42,6 @@ function PlaylistModalActions({ playlist, onCancel, setPlaylists }) {
     const [newName, setNewName] = useState(playlist.name)
 
 
-    console.log('----playlist.video_details')
-    console.log(playlist.video_details)
-
-
-
 
     async function handleDeletePlaylist(accessToken, playlistId) {
         try {
