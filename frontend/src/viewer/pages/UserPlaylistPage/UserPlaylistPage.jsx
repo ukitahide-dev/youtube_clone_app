@@ -60,9 +60,6 @@ function UserPlaylistPage() {
                 <div className={UserPlaylistPageStyles.mainTitle}>
                     <h2>プレイリスト</h2>
                 </div>
-                <div className={UserPlaylistPageStyles.tags}>
-                    タグず
-                </div>
 
                 <div className={`${UserPlaylistPageStyles.videoCards}`}>
                     {playlists.map((pl) => (

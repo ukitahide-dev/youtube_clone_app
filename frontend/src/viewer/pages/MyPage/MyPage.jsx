@@ -41,7 +41,7 @@ function MyPage() {
 
                 <PlaylistPart />
                 <LikeVideoPart />
-                {/* <WatchHistoryPart /> */}
+                
             </div>
         </div>
     )

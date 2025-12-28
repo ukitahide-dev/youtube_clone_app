@@ -37,10 +37,6 @@ function VideoList({ videos }) {
 
     return (
         <div className={VideoListStyles.mainArea}>
-            <div className={VideoListStyles.tags}>
-                出来たら上にタグボタンみたいなやつ
-            </div>
-
             <div className={VideoListStyles.videoCards}>
                 {videos.map((video) => (
                     <div key={video.id} className={VideoListStyles.videoCard}>
