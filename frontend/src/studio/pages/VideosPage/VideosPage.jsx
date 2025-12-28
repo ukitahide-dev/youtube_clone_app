@@ -20,6 +20,7 @@ import { useDeleteVideo } from "./hooks/useDeleteVideo";
 
 //------utils-----
 import { formatDate } from "../../../utils/FormatDate";
+import { getThum } from "../../../utils/getThum.js";
 
 
 // -----css-----
@@ -30,7 +31,6 @@ import VideosPageStyles from './VideosPage.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChartColumn } from '@fortawesome/free-solid-svg-icons';
 import { faEllipsisV } from '@fortawesome/free-solid-svg-icons';
-
 
 
 
@@ -109,7 +109,7 @@ function VideosPage() {
             {videos.map(video => (
                 <div key={video.id} className={`${VideosPageStyles.videoArea} ${VideosPageStyles.col}`}>
                     <div className={VideosPageStyles.left}>
-                        <img src={video.thum} alt="" />
+                        <img src={getThum(video)} alt={video.title} />
                         <div>
                             <p className={VideosPageStyles.videoTitle}>
                                 {video.title.length > 10 ? video.title.slice(0, 10) + '...' : video.title}
