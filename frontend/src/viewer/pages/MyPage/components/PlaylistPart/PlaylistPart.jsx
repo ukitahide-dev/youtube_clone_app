@@ -52,9 +52,6 @@ function PlaylistPart() {
             try {
                 const res = await fetchViewerPlaylists(accessToken)
                 setPlaylists(res.slice(0, 12));
-                console.log('----playlistsの中身----')
-                console.log(playlists);
-
             } catch (err) {
                 console.error('プレイリスト取得失敗', err)
             }

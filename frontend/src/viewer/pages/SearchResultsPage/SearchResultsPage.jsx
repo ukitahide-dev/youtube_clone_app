@@ -6,6 +6,9 @@ import { Link, useLocation, useSearchParams } from "react-router-dom";
 // ----services----
 import { fetchSearchedVideos } from "../../../services/videos";
 
+// ----utils----
+import { getThum } from "../../../utils/getThum";
+
 
 // ----components----
 import Sidebar from "../../components/Sidebar/Sidebar";
@@ -19,6 +22,7 @@ import SearchResultsPageStyles from './SearchResultsPage.module.css';
 // -----fontAwsome-----
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEllipsisV } from '@fortawesome/free-solid-svg-icons'
+import { getThum } from "../../../utils/getThum";
 
 
 
@@ -72,7 +76,7 @@ function SearchResultsPage() {
                     <div className={SearchResultsPageStyles.card}>
                         <Link key={video.id} to={`/videos/${video.id}`} className={SearchResultsPageStyles.videoItem}>
                             <div className={SearchResultsPageStyles.left}>
-                                <img src={video.thum} alt={video.title} />
+                                <img src={getThum(video)} alt={video.title} />
                             </div>
 
                             <div className={SearchResultsPageStyles.right}>
