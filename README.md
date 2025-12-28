@@ -2,7 +2,7 @@
 YouTube風のWebアプリ（React + Django）
 
 ## URL
-https://my-youtube-frontend-bdqg.onrender.com
+
 
 ※ Render無料プランのため、初回アクセス時に
 起動まで少し時間がかかる場合があります。
