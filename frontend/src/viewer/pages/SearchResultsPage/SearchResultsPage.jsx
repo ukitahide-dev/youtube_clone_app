@@ -22,7 +22,7 @@ import SearchResultsPageStyles from './SearchResultsPage.module.css';
 // -----fontAwsome-----
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEllipsisV } from '@fortawesome/free-solid-svg-icons'
-import { getThum } from "../../../utils/getThum";
+
 
 
 
