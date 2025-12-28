@@ -3,6 +3,13 @@ import { useEffect, useState } from 'react';
 import { useRef } from 'react';
 
 
+// ----utils----
+import { getThum } from '../../../../../utils/getThum';
+
+// ----config----
+import { useUpload } from '../../../../../config';
+
+
 // ----css----
 import VideoEditModalStyles from './VideoEditModal.module.css';
 
@@ -13,6 +20,7 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons'
 
 
 
+
 // 親: VideoModalMenu.jsx
 // 役割:
 
@@ -20,7 +28,7 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons'
 
 function VideoEditModal({ video, onEdit, categories, tags, onCancel}) {
     const [title, setTitle] = useState(video.title);
-    const [thumbnail, setThumbnail] = useState(video.thum);
+    const [thumbnail, setThumbnail] = useState(getThum(video));
 
     const [category, setCategory] = useState(String(video.category || ""));
     const [selectedTags, setSelectedTags] = useState(
@@ -99,13 +107,22 @@ function VideoEditModal({ video, onEdit, categories, tags, onCancel}) {
                         className={VideoEditModalStyles.thumbnail}
                     />
                     {/* 非表示のファイル入力 */}
-                    <input
-                        type="file"
-                        accept="image/*"   // ファイル選択ダイアログで選べるファイルの種類を画像だけに制限する
-                        ref={fileInputRef}
-                        style={{ display: "none" }}
-                        onChange={handleThumbnailChange}
-                    />
+                    {useUpload ? (
+                        <input
+                            type="file"
+                            accept="image/*"   // ファイル選択ダイアログで選べるファイルの種類を画像だけに制限する
+                            ref={fileInputRef}
+                            style={{ display: "none" }}
+                            onChange={handleThumbnailChange}
+                        />
+                    ): (
+                        <input
+                            type='text'
+                            placeholder='サムネイルurlを入力してください'
+                            value={thumbnail}
+                            onChange={(e) => setThumbnail(e.target.value)}
+                        />
+                    )}
                 </div>
                 <div className={VideoEditModalStyles.titleArea}>
                     <label htmlFor="title">タイトル</label>
