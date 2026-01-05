@@ -77,8 +77,13 @@ class VideoSerializer(serializers.ModelSerializer):
 
 
     def validate(self, data):
+        request = self.context.get("request")
         use_upload = settings.USE_UPLOAD
 
+        if request and request.method == "PATCH":
+            return data
+
+        
         if use_upload:  # 開発用の場合
             if not data.get("video"):
                 raise serializers.ValidationError("動画ファイルは必須です")
