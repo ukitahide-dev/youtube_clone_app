@@ -77,7 +77,7 @@ function UploadVideoForm({ categories, tags, }) {
             formData.append("tags", tagId);
         });
 
-        
+
         if (useUpload) {
             // 開発用（ファイル）
             if (!videoFile || !thumbnail) {

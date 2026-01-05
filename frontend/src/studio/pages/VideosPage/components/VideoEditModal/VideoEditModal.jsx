@@ -43,12 +43,16 @@ function VideoEditModal({ video, onEdit, categories, tags, onCancel}) {
 
     // 画像をクリック → ファイル選択を開く
     const handleThumbnailClick = () => {
+        if (!useUpload) return;
+
         fileInputRef.current.click();
     };
 
 
     // ファイルが選ばれたときにプレビューを更新
     const handleThumbnailChange = (e) => {
+        if (!useUpload) return;  // 本番環境ではurl保存のため、returnで処理を終了させる
+
         const file = e.target.files[0];
         if (file) {
             const imageURL = URL.createObjectURL(file);
@@ -77,8 +81,12 @@ function VideoEditModal({ video, onEdit, categories, tags, onCancel}) {
         }
 
         // サムネイル変更済みなら追加
-        if (fileInputRef.current.files[0]) {
+        if (useUpload && fileInputRef.current?.files?.[0]) {
             formData.append("thum", fileInputRef.current.files[0]);
+        }
+
+        if (!useUpload) {
+            formData.append("thumnail_url", thumbnail);
         }
 
         onEdit(video.id, formData);
