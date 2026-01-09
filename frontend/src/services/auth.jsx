@@ -1,3 +1,6 @@
+// ユーザー新規登録・ログイン・ログアウト処理をまとめる
+
+
 import axios from "axios";
 import { USERS_API, AUTH_API } from "./api.jsx";
 

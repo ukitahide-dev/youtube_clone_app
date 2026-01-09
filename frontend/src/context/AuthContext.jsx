@@ -81,7 +81,14 @@ export function AuthProvider({ children }) {
 
     return (
         <AuthContext.Provider   // Provider は「Context の値をアプリに配る人」の役割。value に渡したものが、Context にアクセスする 子コンポーネント全てから見える状態や関数になる。
-            value={{ accessToken, refreshToken, loginUser, logoutUser, user }}  // Provider 内の value に状態や関数を渡すと、子コンポーネント全てが useContext(AuthContext) でアクセス可能。
+            value={{
+                accessToken,
+                refreshToken,
+                loginUser,
+                logoutUser,
+                user,
+                setUser,
+            }}  // Provider 内の value に状態や関数を渡すと、子コンポーネント全てが useContext(AuthContext) でアクセス可能。
         >
             {children}
         </AuthContext.Provider>  // {children} はこの Provider に包まれた 子コンポーネント のこと。

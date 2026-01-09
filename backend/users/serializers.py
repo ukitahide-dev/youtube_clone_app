@@ -19,7 +19,7 @@ class UserSerializer(serializers.ModelSerializer):
         user = get_user_model().objects.create_user(**validated_data)
 
         return user
-    
+
 
     def get_subscriber_count(self, obj):
         return obj.subscribers.count()

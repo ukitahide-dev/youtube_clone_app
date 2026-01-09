@@ -20,9 +20,12 @@
 
 .mainArea > .profileArea > img {
     max-width: 130px;
-    height: auto;
+    width: 130px;
+    height: 130px;
     border-radius: 100%;
-    /* border: 1px solid blue; */
+    object-fit: cover;
+    cursor: pointer;
+
 }
 
 .mainArea > .profileArea > .username {

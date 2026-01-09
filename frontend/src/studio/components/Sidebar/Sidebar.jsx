@@ -53,12 +53,6 @@ function Sidebar() {
                     </Link>
                 </li>
                 <li>
-                    <Link to="/studio/dashboard">
-                        <span><FontAwesomeIcon icon={faTachometerAlt} size="lg" /></span>
-                        <span>ダッシュボード</span>
-                    </Link>
-                </li>
-                <li>
                     <Link to="/studio/contents/videos">
                         <span><FontAwesomeIcon icon={faFileLines} /></span>
                         <span>コンテンツ</span>
