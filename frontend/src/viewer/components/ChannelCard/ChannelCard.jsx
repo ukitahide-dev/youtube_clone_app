@@ -7,12 +7,17 @@ import { useContext, useState } from 'react';
 import { toggleSubscription } from '../../../services/uploaders';
 
 
+// ----utils----
+import { getProfileIconSrc } from '../../../utils/profileIcon';
+
+
 // ----context----
 import { AuthContext } from '../../../context/AuthContext';
 
 
 // ----css----
 import ChannelCardStyles from './ChannelCard.module.css';
+
 
 
 
@@ -25,7 +30,7 @@ import ChannelCardStyles from './ChannelCard.module.css';
 
 
 function ChannelCard({ channel, }) {
-    const { accessToken } = useContext(AuthContext);
+    const { accessToken, user } = useContext(AuthContext);
 
     const [isSubscribed, setIsSubscribed] = useState(channel.is_subscribed);
     const [subscriberCount, setSubscriberCount] = useState(channel.subscriber_count);
@@ -53,7 +58,7 @@ function ChannelCard({ channel, }) {
             <Link to={`/channel/${channel.id}`} className={ChannelCardStyles.channelItem}>
                 <div className={ChannelCardStyles.channelIntro}>
                     <div className={ChannelCardStyles.profileIcon}>
-                        <img src={channel.profile_icon} alt="" />
+                        <img src={getProfileIconSrc(user)} alt="" />
                     </div>
                     <div className={ChannelCardStyles.text}>
                         <h3>{channel.username}</h3>

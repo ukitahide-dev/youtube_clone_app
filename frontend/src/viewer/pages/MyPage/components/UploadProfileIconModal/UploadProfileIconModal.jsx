@@ -41,7 +41,6 @@ function UploadProfileIconModal({ onCancel, }) {
             console.error('プロフィールアイコン変更に失敗', err);
         }
 
-        console.log('入力されたURL:', url);
         onCancel();
     }
 

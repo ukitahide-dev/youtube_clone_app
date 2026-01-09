@@ -6,6 +6,10 @@ import { useParams } from 'react-router-dom'
 import { fetchChannelDetail } from '../../../services/uploaders'
 
 
+// ----utils----
+import { getProfileIconSrc } from '../../../utils/profileIcon.js'
+
+
 // -----component-----
 import Sidebar from '../../components/Sidebar/Sidebar.jsx'
 import ChannelVideos from './components/ChannelVideos/ChannelVideos.jsx'
@@ -15,6 +19,7 @@ import HomeTab from './components/HomeTab/HomeTab'
 // -----css-----
 import ChannelDetailPageStyles from './ChannelDetailPage.module.css'
 import ChannelPlaylists from './components/ChannelPlaylists/ChannelPlaylists'
+
 
 
 
@@ -57,12 +62,9 @@ function ChannelDetailPage() {
         <div className={ChannelDetailPageStyles.container}>
             <Sidebar />
             <div className={ChannelDetailPageStyles.main}>
-                <div className={ChannelDetailPageStyles.coverImage}>
-                    <img src={channel.cover_image} alt="" />
-                </div>
                 <div className={ChannelDetailPageStyles.profile}>
                     <div>
-                        <img src={channel.profile_icon} alt="" />
+                        <img src={getProfileIconSrc(user)} alt="" />
                     </div>
                     <div>
                         <h3 className={ChannelDetailPageStyles.channelName}>

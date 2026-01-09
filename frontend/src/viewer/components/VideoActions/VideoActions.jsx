@@ -24,6 +24,7 @@ import VideoActionsStyles from './VideoActions.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faThumbsUp, faThumbsDown } from '@fortawesome/free-regular-svg-icons'
 import { faEllipsisV } from '@fortawesome/free-solid-svg-icons';
+import { getProfileIconSrc } from '../../../utils/profileIcon'
 
 
 
@@ -101,8 +102,9 @@ function VideoActions({ video, setVideo, }) {
     return (
         <div className={VideoActionsStyles.bottom}>
             <div className={VideoActionsStyles.left}>
-                <p>投稿者: {video.uploader_name}</p>
-                <span>{video.views}回視聴</span>
+                <img src={getProfileIconSrc(user)} alt="" />
+                <span>{video.uploader_name}</span>
+                <span>{video.views}回視聴・</span>
                 <span>チャンネル登録者数{subscriberCount}人</span>
             </div>
             <div className={VideoActionsStyles.right}>

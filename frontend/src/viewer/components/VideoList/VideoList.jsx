@@ -3,11 +3,22 @@ import { Link } from 'react-router-dom'
 import { useContext, useState } from 'react'
 
 
+// ----context----
+import { AuthContext } from '../../../context/AuthContext'
+
+
 // ----components----
 import VideoModalMenu from '../VideoModalMenu/VideoModalMenu'
 
+
 // ----config----
 import { useUpload } from '../../../config'
+
+
+
+// ----utils----
+import { getThum } from '../../../utils/getThum'
+import { getProfileIconSrc } from '../../../utils/profileIcon'
 
 
 // -----css-----
@@ -19,8 +30,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEllipsisV } from '@fortawesome/free-solid-svg-icons'
 import { TimeSince } from '../../../utils/TimeSince'
 
-// ----utils----
-import { getThum } from '../../../utils/getThum'
+
+
+
 
 
 // 親: HomePage.jsx、SubscribedVideosPage.jsx
@@ -31,6 +43,8 @@ import { getThum } from '../../../utils/getThum'
 
 
 function VideoList({ videos }) {
+    const { user } = useContext(AuthContext);
+
     const [activeModal, setActiveModal] = useState(null);
 
 
@@ -54,7 +68,7 @@ function VideoList({ videos }) {
                                     <div className={VideoListStyles.profile}>
                                         <img
                                             className={VideoListStyles.profileIcon}
-                                            src={video.uploader_icon}
+                                            src={getProfileIconSrc(user)}
                                         />
                                     </div>
                                 </div>

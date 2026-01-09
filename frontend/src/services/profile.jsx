@@ -9,7 +9,7 @@ import { USERS_API } from './api';
 
 
 // プロフィールアイコンを変更する(開発用)
-export async function uploadProfileIcon (token, file) {
+export async function uploadProfileIcon(token, file) {
     const formData = new FormData();
     formData.append('profile_icon', file);
 
@@ -29,7 +29,7 @@ export async function uploadProfileIcon (token, file) {
 
 
 // プロフィールアイコンを変更する(本番用)
-export async function uploadProfileIconByUrl (token, url) {
+export async function uploadProfileIconByUrl(token, url) {
     const res = await axios.post(
         `${USERS_API}/profile-icon-url/`,
         {
