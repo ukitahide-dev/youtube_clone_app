@@ -64,7 +64,12 @@ function ChannelDetailPage() {
             <div className={ChannelDetailPageStyles.main}>
                 <div className={ChannelDetailPageStyles.profile}>
                     <div>
-                        <img src={getProfileIconSrc(user)} alt="" />
+                        <img src={getProfileIconSrc({
+                                profile_icon_url: channel.uploader_icon_url,
+                                profile_icon: channel.uploader_icon,
+                            })}
+                            alt=""
+                        />
                     </div>
                     <div>
                         <h3 className={ChannelDetailPageStyles.channelName}>

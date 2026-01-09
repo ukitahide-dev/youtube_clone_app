@@ -32,7 +32,7 @@ class SubscriptionViewSet(viewsets.ModelViewSet):
 
 
 
-    # 自分がフォローしてるチャンネル一覧を取得するための専用API
+    # 自分がフォローしているチャンネル一覧を取得するための専用API
     @action(detail=False, methods=['get'], permission_classes=[permissions.IsAuthenticated], url_path='subscribed-channels')
     def subscribed_channels(self, request):
         user = request.user  # 現在ログイン中のユーザー

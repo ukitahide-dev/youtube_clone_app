@@ -17,6 +17,7 @@ import { useUpload } from '../../../config'
 
 
 // ----utils----
+import { TimeSince } from '../../../utils/TimeSince'
 import { getThum } from '../../../utils/getThum'
 import { getProfileIconSrc } from '../../../utils/profileIcon'
 
@@ -28,7 +29,7 @@ import VideoListStyles from './VideoList.module.css'
 // -----fontAwsome-----
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEllipsisV } from '@fortawesome/free-solid-svg-icons'
-import { TimeSince } from '../../../utils/TimeSince'
+
 
 
 
@@ -43,9 +44,9 @@ import { TimeSince } from '../../../utils/TimeSince'
 
 
 function VideoList({ videos }) {
-    const { user } = useContext(AuthContext);
-
     const [activeModal, setActiveModal] = useState(null);
+
+
 
 
 
@@ -68,7 +69,10 @@ function VideoList({ videos }) {
                                     <div className={VideoListStyles.profile}>
                                         <img
                                             className={VideoListStyles.profileIcon}
-                                            src={getProfileIconSrc(user)}
+                                            src={getProfileIconSrc({
+                                                profile_icon_url: video.uploader_icon_url,
+                                                profile_icon: video.uploader_icon,
+                                            })}
                                         />
                                     </div>
                                 </div>

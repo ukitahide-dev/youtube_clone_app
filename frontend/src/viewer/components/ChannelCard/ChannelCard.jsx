@@ -58,7 +58,12 @@ function ChannelCard({ channel, }) {
             <Link to={`/channel/${channel.id}`} className={ChannelCardStyles.channelItem}>
                 <div className={ChannelCardStyles.channelIntro}>
                     <div className={ChannelCardStyles.profileIcon}>
-                        <img src={getProfileIconSrc(user)} alt="" />
+                        <img src={getProfileIconSrc({
+                                    profile_icon_url: channel.uploader_icon_url,
+                                    profile_icon: channel.uploader_icon,
+                                })}
+                            alt=""
+                        />
                     </div>
                     <div className={ChannelCardStyles.text}>
                         <h3>{channel.username}</h3>

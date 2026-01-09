@@ -35,13 +35,13 @@ class TagSerializer(serializers.ModelSerializer):
         fields = ['id', 'name']
 
 
-
 # 基本的な動画情報をシリアライズする。つまり、動画の一覧表示用とかに使うやつ。
 class VideoSerializer(serializers.ModelSerializer):
     category = serializers.PrimaryKeyRelatedField(queryset=Category.objects.all())  # Video モデルにある category（外部キー）をJSON 上では id（主キー）だけでやり取りできるようにする。serializers.PrimaryKeyRelatedField：外部キーや多対多関係を「ID（主キー）」でやり取りするためのフィールド。
     tags = serializers.PrimaryKeyRelatedField(queryset=Tag.objects.all(), many=True)
     uploader_name = serializers.CharField(source='uploader.username', read_only=True)  # これで「uploader（Userモデル）の username を uploader_name という名前で JSON に含める」と指定している。「誰が投稿したか」をフロントで見せるため。
     uploader_icon = serializers.ImageField(source='uploader.profile_icon', read_only=True)
+    uploader_icon_url = serializers.ImageField(source='uploader.profile_icon_url', read_only=True)
     subscriber_count = serializers.SerializerMethodField()   # Videoモデルに存在しないフィールド(カラム)を自分で作り、フロント側で表示できるようにする。
 
     video = serializers.FileField(required=False)
@@ -53,7 +53,7 @@ class VideoSerializer(serializers.ModelSerializer):
             'id', 'title', 'video', 'thum', 'uploader', 'uploaded_at','description',
             'like', 'dislike', 'views',
             'category', 'tags', 'uploaded_at', 'updated_at', 'uploader_name', 'subscriber_count',
-            'uploader_icon', 'video_url', 'thumbnail_url',
+            'uploader_icon', 'uploader_icon_url', 'video_url', 'thumbnail_url',
         ]
 
         # read_only_fields → 受信時は無視される（クライアントから値を入れられない）。例：uploader はログインユーザーから自動で設定するから、フロントからは送らせない。
@@ -83,7 +83,7 @@ class VideoSerializer(serializers.ModelSerializer):
         if request and request.method == "PATCH":
             return data
 
-        
+
         if use_upload:  # 開発用の場合
             if not data.get("video"):
                 raise serializers.ValidationError("動画ファイルは必須です")
@@ -310,7 +310,7 @@ class UploaderSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ['id', 'email', 'username', 'profile_icon', 'cover_image', 'subscriber_count',
+        fields = ['id', 'email', 'username', 'profile_icon', 'profile_icon_url', 'subscriber_count',
                   'is_subscribed',
                 ]
 

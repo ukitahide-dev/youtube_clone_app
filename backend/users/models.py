@@ -44,11 +44,9 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     # ローカル(開発)用
     profile_icon = models.ImageField(upload_to='profile-icons/', blank=True, null=True)
-    cover_image = models.ImageField(upload_to='profile-covers/', blank=True, null=True)
 
     # render(本番)用
     profile_icon_url = models.URLField(blank=True, null=True)
-    cover_image_url = models.URLField(blank=True, null=True)
 
 
     def __str__(self):

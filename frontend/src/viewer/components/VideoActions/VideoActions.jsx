@@ -12,6 +12,10 @@ import { toggleSubscription } from '../../../services/uploaders'
 import { AuthContext } from '../../../context/AuthContext'
 
 
+// ----utils----
+import { getProfileIconSrc } from '../../../utils/profileIcon'
+
+
 // ----components----
 import SubModal from './components/SubModal/SubModal'
 
@@ -24,7 +28,7 @@ import VideoActionsStyles from './VideoActions.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faThumbsUp, faThumbsDown } from '@fortawesome/free-regular-svg-icons'
 import { faEllipsisV } from '@fortawesome/free-solid-svg-icons';
-import { getProfileIconSrc } from '../../../utils/profileIcon'
+
 
 
 
