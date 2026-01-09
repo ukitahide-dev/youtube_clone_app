@@ -41,7 +41,7 @@ class VideoSerializer(serializers.ModelSerializer):
     tags = serializers.PrimaryKeyRelatedField(queryset=Tag.objects.all(), many=True)
     uploader_name = serializers.CharField(source='uploader.username', read_only=True)  # これで「uploader（Userモデル）の username を uploader_name という名前で JSON に含める」と指定している。「誰が投稿したか」をフロントで見せるため。
     uploader_icon = serializers.ImageField(source='uploader.profile_icon', read_only=True)
-    uploader_icon_url = serializers.ImageField(source='uploader.profile_icon_url', read_only=True)
+    uploader_icon_url = serializers.CharField(source='uploader.profile_icon_url', read_only=True)
     subscriber_count = serializers.SerializerMethodField()   # Videoモデルに存在しないフィールド(カラム)を自分で作り、フロント側で表示できるようにする。
 
     video = serializers.FileField(required=False)

@@ -59,8 +59,8 @@ function ChannelCard({ channel, }) {
                 <div className={ChannelCardStyles.channelIntro}>
                     <div className={ChannelCardStyles.profileIcon}>
                         <img src={getProfileIconSrc({
-                                    profile_icon_url: channel.uploader_icon_url,
-                                    profile_icon: channel.uploader_icon,
+                                    profile_icon_url: channel.profile_icon_url,
+                                    profile_icon: channel.profile_icon,
                                 })}
                             alt=""
                         />

@@ -106,10 +106,17 @@ function VideoActions({ video, setVideo, }) {
     return (
         <div className={VideoActionsStyles.bottom}>
             <div className={VideoActionsStyles.left}>
-                <img src={getProfileIconSrc(user)} alt="" />
-                <span>{video.uploader_name}</span>
-                <span>{video.views}回視聴・</span>
-                <span>チャンネル登録者数{subscriberCount}人</span>
+                <img src={getProfileIconSrc({
+                            profile_icon_url: video.uploader_icon_url,
+                            profile_icon: video.uploader_icon,
+                        })}
+                     alt=""
+                />
+                <div className={VideoActionsStyles.sub}>
+                    <p>{video.uploader_name}</p>
+                    <span>{video.views}回視聴・</span>
+                    <span>チャンネル登録者数{subscriberCount}人</span>
+                </div>
             </div>
             <div className={VideoActionsStyles.right}>
                 {user && video.uploader !== user?.id && (  // 自分の動画の場合は登録ボタンを表示させない

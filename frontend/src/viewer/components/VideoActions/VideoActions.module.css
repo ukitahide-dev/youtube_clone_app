@@ -9,6 +9,14 @@
 
 
 /* ----.bottom > .left---- */
+
+.bottom > .left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
 .bottom > .left  > img {
     width: 50px;
     height: 50px;
