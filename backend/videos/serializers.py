@@ -343,7 +343,7 @@ class UploaderDetailSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ['id', 'username', 'email', 'profile_icon', 'cover_image', 'videos',
+        fields = ['id', 'username', 'email', 'profile_icon', 'videos',
                     'subscriber_count', 'is_subscribed', 'uploader_playlists',
                 ]
 

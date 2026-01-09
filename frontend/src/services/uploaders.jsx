@@ -7,7 +7,7 @@ import { VIDEOS_API } from "./api";
 // チャンネル詳細を取得する
 export async function fetchChannelDetail(uploaderId) {
     try {
-        const res = await axios.get(`${VIDEOS_API}/uploaders/${uploaderId}/`);   
+        const res = await axios.get(`${VIDEOS_API}/uploaders/${uploaderId}/`);  // uploader_views.py/UploaderViewSetが実行される。
         return res.data;
     } catch (err) {
         console.error('チャンネル詳細の取得に失敗:', err)

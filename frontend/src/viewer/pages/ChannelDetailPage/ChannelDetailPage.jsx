@@ -14,11 +14,12 @@ import { getProfileIconSrc } from '../../../utils/profileIcon.js'
 import Sidebar from '../../components/Sidebar/Sidebar.jsx'
 import ChannelVideos from './components/ChannelVideos/ChannelVideos.jsx'
 import HomeTab from './components/HomeTab/HomeTab'
+import ChannelPlaylists from './components/ChannelPlaylists/ChannelPlaylists'
 
 
 // -----css-----
 import ChannelDetailPageStyles from './ChannelDetailPage.module.css'
-import ChannelPlaylists from './components/ChannelPlaylists/ChannelPlaylists'
+
 
 
 
