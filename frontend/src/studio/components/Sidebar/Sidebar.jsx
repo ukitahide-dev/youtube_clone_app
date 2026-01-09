@@ -9,6 +9,10 @@ import { BASE_URL } from '../../../services/api';
 import { AuthContext } from '../../../context/AuthContext';
 
 
+// ----utils----
+import { getProfileIconSrc } from '../../../utils/profileIcon';
+
+
 
 // -----css-----
 import SidebarStyles from './Sidebar.module.css';
@@ -19,6 +23,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFileLines } from '@fortawesome/free-regular-svg-icons';
 import { faChartColumn } from '@fortawesome/free-solid-svg-icons';
 import { faTachometerAlt } from '@fortawesome/free-solid-svg-icons';
+
 
 
 
@@ -37,11 +42,11 @@ function Sidebar() {
         <div className={SidebarStyles.sideArea}>
             <div className={SidebarStyles.profile}>
                 <div>
-                    <img src={`${BASE_URL}/${user?.profile_icon}`} alt="プロフィールアイコン" />
+                    <img src={getProfileIconSrc(user)} alt="プロフィールアイコン" />
                 </div>
                 <div className={SidebarStyles.text}>
                     <p>チャンネル</p>
-                    <p className={SidebarStyles.userName}>たか</p>
+                    <p className={SidebarStyles.userName}>{user.username}</p>
                 </div>
             </div>
 
