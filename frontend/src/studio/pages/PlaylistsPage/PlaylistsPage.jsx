@@ -9,6 +9,7 @@ import { AuthContext } from '../../../context/AuthContext';
 
 // ----utils----
 import { formatDate } from '../../../utils/FormatDate';
+import { getThum } from '../../../utils/getThum';
 
 
 // ----services----
@@ -27,6 +28,7 @@ import PlaylistsPageStyles from './PlaylistsPage.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChartColumn } from '@fortawesome/free-solid-svg-icons';
 import { faEllipsisV } from '@fortawesome/free-solid-svg-icons';
+
 
 
 
@@ -99,7 +101,8 @@ function PlaylistsPage() {
             {playlists.map(pl => (
                 <div key={pl.id} className={`${PlaylistsPageStyles.plArea} ${PlaylistsPageStyles.col}`}>
                     <div className={PlaylistsPageStyles.left}>
-                        <img src={pl.video_details[0]?.thum}  />
+                        <img src={pl.video_details[0]?.thum}/>
+                        <img src={getThum(pl.video_details[0])}/>
                         <div>
                             <p className={PlaylistsPageStyles.plTitle}>
                                 {pl.name.length > 10 ? pl.name.slice(0, 10) + '...' : pl.name}

@@ -13,7 +13,7 @@ import ChannelPlaylistsStyles from './ChannelPlaylists.module.css';
 
 
 // 親: ChannelDetailPage.jsx
-// 役割: 今見てるチャンネルの投稿用プレイリストを表示する
+// 役割: 今見ているチャンネルの投稿用プレイリストを表示する
 
 
 function ChannelPlaylists({ playlists, uploaderId, }) {
