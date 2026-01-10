@@ -101,7 +101,6 @@ function PlaylistsPage() {
             {playlists.map(pl => (
                 <div key={pl.id} className={`${PlaylistsPageStyles.plArea} ${PlaylistsPageStyles.col}`}>
                     <div className={PlaylistsPageStyles.left}>
-                        <img src={pl.video_details[0]?.thum}/>
                         <img src={getThum(pl.video_details[0])}/>
                         <div>
                             <p className={PlaylistsPageStyles.plTitle}>

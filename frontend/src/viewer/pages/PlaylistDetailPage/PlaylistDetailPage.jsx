@@ -13,6 +13,7 @@ import { fetchUploaderDetailPlaylist, fetchViewerDetailPlaylist } from '../../..
 
 // ----utils----
 import { TimeSince } from '../../../utils/TimeSince';
+import { getThum } from '../../../utils/getThum';
 
 
 // ----components----
@@ -85,9 +86,6 @@ function PlaylistDetailPage() {
             <Sidebar />
             <div className={PlaylistDetailPageStyles.main}>
                 <h2 className={PlaylistDetailPageStyles.playlistTitle}>{playlist.name}</h2>
-                {/* <div className={PlaylistDetailPageStyles.buttons}>
-                    <button>並べ替え</button>
-                </div> */}
                 <div className={PlaylistDetailPageStyles.videosArea}>
                     {playlist.video_details?.map((v, index) => (
                         <div key={v.id} className={PlaylistDetailPageStyles.card}>
@@ -99,7 +97,7 @@ function PlaylistDetailPage() {
                                 <div className={PlaylistDetailPageStyles.content}>
                                     <span className={PlaylistDetailPageStyles.nums}>{index + 1}</span>
                                     <div className={PlaylistDetailPageStyles.thumArea}>
-                                        <img src={v.thum} alt={v.title} />
+                                        <img src={getThum(v)} alt={v.title} />
                                     </div>
                                     <div className={PlaylistDetailPageStyles.text}>
                                         <p>{v.title}</p>
