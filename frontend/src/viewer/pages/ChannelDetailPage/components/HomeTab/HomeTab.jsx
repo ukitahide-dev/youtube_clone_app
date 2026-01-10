@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 // ----utils----
 import { TimeSince } from '../../../../../utils/TimeSince';
+import { getThum } from '../../../../../utils/getThum';
 
 
 // ----components----
@@ -19,6 +20,7 @@ import HomeTabStyles from './HomeTab.module.css';
 // -----fontAwsome-----
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEllipsisV } from '@fortawesome/free-solid-svg-icons'
+
 
 
 
@@ -40,7 +42,7 @@ function HomeTab({ videos, }) {
                 <Link to={`/videos/${videos[0].id}`} className={HomeTabStyles.videoItem}>
                     <div className={HomeTabStyles.left}>
                         <div className={HomeTabStyles.thum}>
-                            <img src={videos[0].thum} />
+                            <img src={getThum(videos[0])} />
                         </div>
                     </div>
                     <div className={HomeTabStyles.right}>

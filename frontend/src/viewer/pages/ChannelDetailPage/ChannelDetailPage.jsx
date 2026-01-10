@@ -44,6 +44,8 @@ function ChannelDetailPage() {
         async function loadChannelDetail() {
             try {
                 const data = await fetchChannelDetail(id);   // uploaders.jsx
+                // console.log("----ChannelDetailPageのdataの中身----");
+                // console.log(data);
                 setChannel(data);
             } catch (err) {
                 console.error('チャンネル詳細の取得に失敗:', err)
@@ -80,7 +82,6 @@ function ChannelDetailPage() {
                             <p>チャンネル登録者数{channel.subscriber_count}人</p>
                             <p>{channel.videos.length}本の動画</p>
                         </div>
-                        <button>登録トグルボタン</button>
                     </div>
                 </div>
                 <div className={ChannelDetailPageStyles.tagMenu}>
