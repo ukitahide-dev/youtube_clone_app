@@ -10,8 +10,9 @@
 
 /* ----.channelCard---- */
 .channelCard {
-    flex: 1 1 calc(16.66666% - 8px);
     margin-top: 16px;
+    max-width: calc(25% - 16px);
+    flex: 1 1 calc(25% -16px);
 }
 
 .channelCard > .thum {

@@ -2,11 +2,12 @@
 import { Link } from "react-router-dom";
 
 
+// ----utils----
+import { getThum } from "../../../../../utils/getThum";
 
 
 // ----css-----
 import ChannelPlaylistsStyles from './ChannelPlaylists.module.css';
-import { getThum } from "../../../../../utils/getThum";
 
 
 
