@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 
 // ----css-----
 import ChannelPlaylistsStyles from './ChannelPlaylists.module.css';
+import { getThum } from "../../../../../utils/getThum";
 
 
 
@@ -27,7 +28,7 @@ function ChannelPlaylists({ playlists, uploaderId, }) {
                     className={ChannelPlaylistsStyles.channelCard}
                 >
                     <div className={ChannelPlaylistsStyles.thum}>
-                        <img src={playlist.video_details[0].thum} alt="" />
+                        <img src={getThum(playlist.video_details[0])} alt="" />
                         <p className={ChannelPlaylistsStyles.videoNums}>{playlist.videos.length}本の動画</p>
                     </div>
                     <p className={ChannelPlaylistsStyles.title}>{playlist.name}</p>

@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 // -----utils 汎用関数-----
 import { TimeSince } from '../../../../../utils/TimeSince'
 import { formatViews } from '../../../../../utils/FormatViews'
+import { getThum } from '../../../../../utils/getThum'
 
 
 // ----components----
@@ -19,6 +20,7 @@ import ChannelVideosStyles from './ChannelVideos.module.css'
 //  -----fontAwsome-----
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEllipsisV } from '@fortawesome/free-solid-svg-icons'
+
 
 
 
@@ -85,7 +87,7 @@ function ChannelVideos({ videos }) {
                     <div className={ChannelVideosStyles.videoCard}>
                         <Link to={`/videos/${video.id}`} key={video.id} className={ChannelVideosStyles.videoItem}>
                             <div className={ChannelVideosStyles.thum}>
-                                <img src={video.thum} alt={video.title} />
+                                <img src={getThum(video)} alt={video.title} />
                             </div>
                             <div className={ChannelVideosStyles.bottom}>
                                 <p className={ChannelVideosStyles.videoTitle}>
