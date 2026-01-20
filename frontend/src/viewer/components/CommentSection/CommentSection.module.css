@@ -30,20 +30,13 @@
 /* ----.comment > .right---- */
 .comment > .right {
     position: relative;
-    background-color: rgb(194, 249, 249);
+    /* background-color: rgb(194, 249, 249); */
 }
 
 
 .comment > .right .toggleModal {
     color: #666;
     cursor: pointer;
-}
-
-
-/* ----.comment > .left---- */
-
-.comment .left {
-    background-color: teal;
 }
 
 
@@ -65,12 +58,6 @@
 .commentArea .commentList .comment textarea:focus {
     border-bottom: 2px solid #222;
 }
-
-
-
-
-
-
 
 
 

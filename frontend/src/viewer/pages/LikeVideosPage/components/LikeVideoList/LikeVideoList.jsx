@@ -5,6 +5,8 @@ import { useState } from 'react';
 
 // ----utils----
 import { TimeSince } from '../../../../../utils/TimeSince'
+import { getThum } from '../../../../../utils/getThum';
+import { getProfileIconSrc } from '../../../../../utils/profileIcon';
 
 
 // ----components----
@@ -19,6 +21,8 @@ import VideoListStyles from '../../../../components/VideoList/VideoList.module.c
 // -----fontAwsome-----
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEllipsisV } from '@fortawesome/free-solid-svg-icons'
+
+
 
 
 
@@ -49,7 +53,7 @@ function LikeVideoList({ videos, setLikedVideos, }) {
                             <div className={VideoListStyles.thumArea}>
                                 <img
                                     className={VideoListStyles.thum}
-                                    src={video.thum}
+                                    src={getThum(video)}
                                     alt={video.title}
                                 />
                             </div>
@@ -58,7 +62,10 @@ function LikeVideoList({ videos, setLikedVideos, }) {
                                     <div className={VideoListStyles.profile}>
                                         <img
                                             className={VideoListStyles.profileIcon}
-                                            src={video.uploader_icon}
+                                            src={getProfileIconSrc({
+                                                profile_icon_url: video.uploader_icon_url,
+                                                profile_icon: video.uploader_icon,
+                                            })}
                                         />
                                     </div>
                                 </div>

@@ -75,7 +75,7 @@ class Like(models.Model):
 
     class Meta:
         constraints = [
-            models.UniqueConstraint(fields=['user', 'video'], name='unique_like')
+            models.UniqueConstraint(fields=['user', 'video'], name='unique_like')  # 同じ user と video の組み合わせはテーブルに1行しか存在できないように制約する
         ]
 
 
@@ -187,7 +187,7 @@ class History(models.Model):
 class Subscription(models.Model):
     subscriber = models.ForeignKey(User, related_name='subscriptions', on_delete=models.CASCADE)  # 登録「する」側のユーザー。たとえば「あなた」が他のチャンネルを登録したとき、ここが「あなた」になる。related_name='subscriptions' によって、user.subscriptions.all() で「あなたが登録しているユーザー一覧」が取れる。
     subscribed_to = models.ForeignKey(User, related_name='subscribers', on_delete=models.CASCADE)  # 登録「される」側のユーザー（チャンネル主）。related_name='subscribers' で、user.subscribers.all() で「自分をフォローしてる人一覧」が取れる。
-    subscribed_at = models.DateTimeField(auto_now_add=True)
+    subscribed_at = models.DateTimeField(auto_now_add=True)  # 登録日時やUnique制約など追加情報を持たせたいため、中間モデルとして作成
 
 
     class Meta:  # 「1人のユーザーが、同じ相手を2回以上フォローできないようにする制約」
