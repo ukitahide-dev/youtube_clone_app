@@ -11,10 +11,12 @@ import { AuthContext } from '../../../../../context/AuthContext';
 
 // ----utils----
 import { formatDate } from '../../../../../utils/FormatDate';
+import { getThum } from '../../../../../utils/getThum';
 
 
 // ----css----
 import SelectVideosModalStyles from './SelectVideosModal.module.css';
+
 
 
 
@@ -91,16 +93,16 @@ function SelectVideosModal({ selectedVideos, setSelectedVideos, closeModal}) {
                                     }`}
                                     onClick={() => toggleSelect(video)}
                                 >
-                                    <img src={video.thum} alt={video.title} />
+                                    <img src={getThum(video)} alt={video.title} />
                                     <div className={SelectVideosModalStyles.bottom}>
                                         <p className={SelectVideosModalStyles.title}>{video.title}</p>
-                                        {/* <span>チェックアイコン</span> */}
                                     </div>
 
                                 </div>
                             ))}
                         </div>
                     </div>
+
                     <div className={SelectVideosModalStyles.right}>
                         <div className={SelectVideosModalStyles.top}>
                             <p>追加する動画</p>
@@ -109,7 +111,7 @@ function SelectVideosModal({ selectedVideos, setSelectedVideos, closeModal}) {
                             {selectedVideos.map(v => (
                                 <div key={v.id} className={SelectVideosModalStyles.videoItem}>
                                     <div className={SelectVideosModalStyles.left}>
-                                        <img src={v.thum} alt={v.title} />
+                                        <img src={getThum(v)} alt={v.title} />
                                     </div>
                                     <div className={SelectVideosModalStyles.right}>
                                         <p className={SelectVideosModalStyles.title}>{v.title}</p>

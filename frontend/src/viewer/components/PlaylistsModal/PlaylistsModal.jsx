@@ -60,8 +60,7 @@ function PlaylistsModal({ video, setActiveModal, playlistType}) {
                 }
 
                 setPlaylists(data);
-                console.log('----loadPlaylistsのdata----');
-                console.log(data);
+
             } catch (err) {
                 console.error(err)
             }

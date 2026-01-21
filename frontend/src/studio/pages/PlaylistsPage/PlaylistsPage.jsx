@@ -101,16 +101,16 @@ function PlaylistsPage() {
             {playlists.map(pl => (
                 <div key={pl.id} className={`${PlaylistsPageStyles.plArea} ${PlaylistsPageStyles.col}`}>
                     <div className={PlaylistsPageStyles.left}>
-                        <img src={getThum(pl.video_details[0])}/>
+                        <img src={getThum(pl?.video_details[0])}/>
                         <div>
                             <p className={PlaylistsPageStyles.plTitle}>
                                 {pl.name.length > 10 ? pl.name.slice(0, 10) + '...' : pl.name}
                             </p>
                             <p className={PlaylistsPageStyles.plDesc}>{pl.description}</p>
                             <div className={PlaylistsPageStyles.menus}>
-                                <Link to={`/studio/analytics/${pl.id}`}>
+                                {/* <Link to={`/studio/analytics/${pl.id}`}>
                                     <FontAwesomeIcon icon={faChartColumn} />
-                                </Link>
+                                </Link> */}
                                 <button
                                     onClick={() => setActiveMenu(activeMenu === pl.id ? null : pl.id)}>
                                     <FontAwesomeIcon icon={faEllipsisV} />

@@ -33,7 +33,6 @@ function Header() {
                 </div>
                 <div className={HeaderStyles.right}>
                     <p onClick={() => setActiveModal('create')}>作成</p>
-                    <p>アイコン</p>
                 </div>
 
             </header>
