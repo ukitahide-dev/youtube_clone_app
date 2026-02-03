@@ -1,7 +1,11 @@
 /* ----.sidebarArea---- */
 .sidebarArea {
     width: 180px;
+    margin-top: 50px;
     padding: 20px;
+    /* position: fixed; */
+    /* z-index: 1000; */
+    /* left: 0; */
     /* min-width: 130px; */
     /* width: 10%; */
     /* background-color: pink; */

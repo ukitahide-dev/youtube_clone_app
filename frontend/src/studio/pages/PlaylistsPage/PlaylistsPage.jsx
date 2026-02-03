@@ -108,9 +108,6 @@ function PlaylistsPage() {
                             </p>
                             <p className={PlaylistsPageStyles.plDesc}>{pl.description}</p>
                             <div className={PlaylistsPageStyles.menus}>
-                                {/* <Link to={`/studio/analytics/${pl.id}`}>
-                                    <FontAwesomeIcon icon={faChartColumn} />
-                                </Link> */}
                                 <button
                                     onClick={() => setActiveMenu(activeMenu === pl.id ? null : pl.id)}>
                                     <FontAwesomeIcon icon={faEllipsisV} />

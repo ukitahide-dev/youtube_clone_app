@@ -24,7 +24,7 @@ function Header() {
 
     return (
         <>
-            <header>
+            <header className={HeaderStyles.header}>
                 <div className={HeaderStyles.left}>
                     <Link>
                         <FontAwesomeIcon icon={faVideo} />

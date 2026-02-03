@@ -231,7 +231,7 @@ class VideoViewSet(viewsets.ModelViewSet):
 
 
 
-
+# ログインユーザーが いいね した動画だけを一覧で返す
 class LikedVideosViewSet(viewsets.ModelViewSet):
     serializer_class = VideoSerializer
     permission_classes = [permissions.IsAuthenticated]
@@ -239,5 +239,5 @@ class LikedVideosViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         user = self.request.user
-        liked_video_ids = Like.objects.filter(user=user, is_liked=True).values_list('video_id', flat=True)
-        return Video.objects.filter(id__in=liked_video_ids).order_by('-uploaded_at')
+        liked_video_ids = Like.objects.filter(user=user, is_liked=True).values_list('video_id', flat=True)  # ログインユーザーが、いいねした Like レコードを全部取得し、video_id だけを抜き出して、1次元のリストにする。'video_id'はLikeモデルからVideoを外部キーで参照しているから書けるDjangoが自動で作ってくれるフィールド名。これで動画idを取得できる。　　　
+        return Video.objects.filter(id__in=liked_video_ids).order_by('-uploaded_at')  # Videoモデルの id が liked_video_ids に含まれる Video を全部取得する

@@ -1,17 +1,18 @@
-header {
+.header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 12px 24px;
     background: rgb(225, 255, 255);
-    /* position: fixed; */
+    position: fixed;
+    z-index: 1000;
     width: 100%;
     box-shadow: 10px 10px 10px rgba(110, 110, 110, 0.1);
 
 }
 
 
-.left a {
+.left > a {
     display: flex;
     align-items: center;
     gap: 6px;
@@ -23,7 +24,5 @@ header {
 
 
 .right {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    cursor: pointer;
 }

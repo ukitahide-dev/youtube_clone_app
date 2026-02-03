@@ -40,7 +40,7 @@ function Header() {
                         placeholder="検索"
                         onChange={(e) => setQuery(e.target.value)}
                     />
-                    <button type="submit">検索</button>
+                    <button className={styles.searchButton} type="submit">検索</button>
                 </form>
             </div>
 

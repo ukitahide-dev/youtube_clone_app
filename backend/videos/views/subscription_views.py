@@ -16,11 +16,11 @@ from users.models import User
 
 class SubscriptionViewSet(viewsets.ModelViewSet):
     queryset = Subscription.objects.all().order_by('-subscribed_at')
-    serializer_class = SubscriptionSerializer   # 通常の CRUD用（list/retrieve/create/update/delete）” のデフォルトのserializer。
+    serializer_class = SubscriptionSerializer   # 通常の CRUD用（list/retrieve/create/update/delete）のデフォルトのserializer。
     permission_classes = [permissions.IsAuthenticated]
 
 
-    # ログインユーザーの登録だけを返す。ログインユーザー自身が登録したサブスクのみを返す。これがないと、全ユーザーの全チャンネル登録情報 が返ってきてしまう。フロントで「このユーザーは登録してる？」を判定するときに、他人の登録まで混ざってしまい、バグ（登録してないのに「登録済み」と表示される）が起きやすくなる。
+    # ログインユーザーの登録だけを返す。ログインユーザー自身が登録したチャンネルのみを返す。これがないと、全ユーザーの全チャンネル登録情報 が返ってきてしまう。フロントで「このユーザーは登録してる？」を判定するときに、他人の登録まで混ざってしまい、バグ（登録してないのに「登録済み」と表示される）が起きやすくなる。
     def get_queryset(self):
         return Subscription.objects.filter(subscriber=self.request.user).order_by('-subscribed_at')
 
@@ -32,13 +32,13 @@ class SubscriptionViewSet(viewsets.ModelViewSet):
 
 
 
-    # 自分がフォローしているチャンネル一覧を取得するための専用API
+    # 自分がフォローしているチャンネル一覧を取得するための専用API。ユーザーの情報が欲しいため設定。
     @action(detail=False, methods=['get'], permission_classes=[permissions.IsAuthenticated], url_path='subscribed-channels')
     def subscribed_channels(self, request):
         user = request.user  # 現在ログイン中のユーザー
 
         channels = User.objects.filter(subscribers__subscriber=user).distinct()    # Subscriptionの中で、subscriber（登録した人）が自分になってるようなUser（＝登録された相手）」を探してる。
-        serializer = UploaderSerializer(channels, many=True, context={'request': request})  # このカスタムメソッドが実行された場合は、UploaderSerializerが使われる。
+        serializer = UploaderSerializer(channels, many=True, context={'request': request})  # このカスタムメソッドが実行された場合は、UploaderSerializerが使われる。Userの一覧（channels）をUploaderSerializerのルールでJSONに変換する準備をしている。
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 

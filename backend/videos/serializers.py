@@ -35,7 +35,7 @@ class TagSerializer(serializers.ModelSerializer):
         fields = ['id', 'name']
 
 
-# 基本的な動画情報をシリアライズする。つまり、動画の一覧表示用とかに使うやつ。
+# 基本的な動画情報をシリアライズする。つまり、動画の一覧表示用とかに使う。
 class VideoSerializer(serializers.ModelSerializer):
     category = serializers.PrimaryKeyRelatedField(queryset=Category.objects.all())  # Video モデルにある category（外部キー）をJSON 上では id（主キー）だけでやり取りできるようにする。serializers.PrimaryKeyRelatedField：外部キーや多対多関係を「ID（主キー）」でやり取りするためのフィールド。
     tags = serializers.PrimaryKeyRelatedField(queryset=Tag.objects.all(), many=True)
@@ -118,14 +118,12 @@ class CommentSerializer(serializers.ModelSerializer):
 
 
     def get_like_count(self, obj):  # obj は その時シリアライズしている1件の Comment モデルのインスタンス。
-        print('いいねが押された')
 
         # あるコメント(1件のCommentモデルのインスタンス)に付けられた『いいね』の数」を取得している。
-        return obj.commentreaction_set.filter(is_liked=True).count()  # いいねの数をカウント。CommentReaction モデルには comment = models.ForeignKey(Comment) があります。Djangoでは、ForeignKeyで関連付けられたモデルに対して、自動的に 逆参照用のマネージャ が作られます。デフォルトでは <小文字のモデル名>_set という名前になります。ここでは commentreaction_set がそれにあたります。つまり obj.commentreaction_set は「このコメントに関連する CommentReaction の全リスト」を表しています。
+        return obj.commentreaction_set.filter(is_liked=True).count()  # いいねの数をカウント。CommentReaction モデルには comment = models.ForeignKey(Comment) がある。Djangoでは、ForeignKeyで関連付けられたモデルに対して、自動的に 逆参照用のマネージャ が作られる。デフォルトでは <小文字のモデル名>_set という名前になる。ここでは commentreaction_set がそれにあたる。つまり obj.commentreaction_set は「このコメントに関連する CommentReaction の全リスト」を表している。
 
 
     def get_dislike_count(self, obj):
-        print('わるいねが押された')
         return obj.commentreaction_set.filter(is_liked=False).count()  # obj.commentreaction_set: objはCommentモデルのインスタンス。
 
 
@@ -315,16 +313,17 @@ class UploaderSerializer(serializers.ModelSerializer):
                 ]
 
 
-    def get_subscriber_count(self, obj):   # obj は今処理している「User」インスタンス。
+    def get_subscriber_count(self, obj):   # objは今シリアライズしている1件のモデルインスタンス
         return obj.subscribers.count()     # Subscriptionモデルのrelated_name='subscribers'を利用。あるチャンネル（User）に対して、そのチャンネルを登録している人たち（Subscriptionの集まり）」にアクセスし、その数をカウントしている。
 
 
     def get_is_subscribed(self, obj):
-        user = self.context["request"].user
+        user = self.context["request"].user  # 今ログインしているユーザー
 
         if user.is_anonymous:
             return False
 
+        # ログイン中の user が、この User（obj）を登録している Subscription は存在するかを調べている
         return Subscription.objects.filter(
             subscriber=user,
             subscribed_to=obj

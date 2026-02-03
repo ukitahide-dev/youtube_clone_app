@@ -1,6 +1,11 @@
-/* Header.module.css */
+
 .header {
   display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
@@ -13,19 +18,26 @@
   font-size: 20px;
 }
 
-.headerCenter {
-  flex: 1;
-  text-align: center;
-}
+
 
 .searchForm {
   display: flex;
+  gap: 8px;
 }
 
 .searchInput {
-  width: 300px;
+  width: 400px;
   padding: 5px;
 }
+
+.searchForm > .searchButton {
+  padding: 6px 20px;
+  background: #000;
+  color: #fff;
+}
+
+
+
 
 .headerRight {
   display: flex;

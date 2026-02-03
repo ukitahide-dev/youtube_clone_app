@@ -33,13 +33,8 @@ import { faSquare } from '@fortawesome/free-regular-svg-icons'
 
 function TogglePlaylists({ playlist, setPlaylists, video, playlistType, }) {
     const { accessToken } = useContext(AuthContext);
-    let a = 0;
 
     const isInPlaylist = playlist.videos.includes(video.id);
-    console.log('---isInPlaylist----');
-    console.log(`${isInPlaylist}: aの値:${a}`);
-
-
 
 
     // プレイリストに動画を追加、削除する処理。トグルで切り替えられる。
