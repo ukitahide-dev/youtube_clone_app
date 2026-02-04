@@ -34,10 +34,10 @@ function CreateModalMenu({ setActiveModal, }) {
             {showCreateModal && (
                 <div className={CreateModalMenuStyles.modal}>
                     <ul className={CreateModalMenuStyles.menus}>
-                        <li>
+                        {/* <li>
                             <span><FontAwesomeIcon icon={faArrowUpFromBracket} /></span>
                             <p>動画をアップロード</p>
-                        </li>
+                        </li> */}
                         <li onClick={() => {
                             setActiveMenu('uploaderPlaylist');
                             setShowCreateModal(false);

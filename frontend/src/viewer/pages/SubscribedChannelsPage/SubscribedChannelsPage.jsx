@@ -41,7 +41,7 @@ function SubscribedChannelsPage() {
         async function loadSubscribedChannels() {
             try {
                 const data = await fetchSubscribedChannels(accessToken);
-                console.log(data);
+                // console.log(data);
                 setChannels(data);
             } catch (err) {
                 console.error("登録チャンネル一覧の取得に失敗:", err);

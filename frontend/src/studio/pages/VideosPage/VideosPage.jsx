@@ -116,9 +116,9 @@ function VideosPage() {
                             </p>
                             <p className={VideosPageStyles.videoDescription}>動画の説明</p>
                             <div className={VideosPageStyles.menus}>
-                                <Link to={`/studio/analytics/${video.id}`}>
+                                {/* <Link to={`/studio/analytics/${video.id}`}>
                                     <FontAwesomeIcon icon={faChartColumn} />
-                                </Link>
+                                </Link> */}
                                 <button
                                     onClick={() => setActiveMenu(activeMenu === video.id ? null : video.id)}>
                                     <FontAwesomeIcon icon={faEllipsisV} />

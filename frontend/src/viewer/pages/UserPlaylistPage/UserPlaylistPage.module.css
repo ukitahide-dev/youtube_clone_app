@@ -4,6 +4,7 @@
 
 /* ----.mainArea---- */
 .mainArea {
+    margin-top: 76px;
     flex: 1;
 
 }
@@ -11,7 +12,6 @@
 
 .mainArea .mainTitle {
     font-size: 26px;
-    margin-top: 20px;
 
 }
 
